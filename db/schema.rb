@@ -10,31 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_24_134713) do
+ActiveRecord::Schema.define(version: 2020_08_24_134811) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "familial_situations", force: :cascade do |t|
-    t.integer "children"
-    t.string "relationship"
-    t.bigint "user_id", null: false
+  create_table "subtasks", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.date "deadline"
+    t.boolean "done"
+    t.bigint "task_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_familial_situations_on_user_id"
+    t.index ["task_id"], name: "index_subtasks_on_task_id"
   end
 
-  create_table "professional_situations", force: :cascade do |t|
-    t.integer "income"
-    t.string "occupation"
-    t.string "fiscal_number"
-    t.string "contract"
-    t.string "company_name"
-    t.string "status"
-    t.bigint "user_id", null: false
+  create_table "tasks", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.boolean "done"
+    t.date "deadline"
+    t.string "organization"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_professional_situations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -49,6 +48,13 @@ ActiveRecord::Schema.define(version: 2020_08_24_134713) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "familial_situations", "users"
-  add_foreign_key "professional_situations", "users"
+  create_table "usertasks", force: :cascade do |t|
+    t.bigint "task_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["task_id"], name: "index_usertasks_on_task_id"
+  end
+
+  add_foreign_key "subtasks", "tasks"
+  add_foreign_key "usertasks", "tasks"
 end
