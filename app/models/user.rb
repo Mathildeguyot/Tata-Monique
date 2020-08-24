@@ -13,11 +13,11 @@ class User < ApplicationRecord
 
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :email, presence: true
+  validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :encrypted_password, presence: true
   validates :birth_date, presence: true
   validates :birth_location, presence: true
-  validates :ID_number, presence: true
+  validates :ID_number, presence: true, format: { with: /^([0-9]{12})(X|V)$/ }
   validates :nationality, presence: true
   validates :username, presence: true
 
