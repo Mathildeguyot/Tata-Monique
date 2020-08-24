@@ -10,10 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_24_131834) do
+ActiveRecord::Schema.define(version: 2020_08_24_135625) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "habitations", force: :cascade do |t|
+    t.integer "number"
+    t.string "street"
+    t.string "city"
+    t.string "zip_code"
+    t.string "category"
+    t.float "rent"
+    t.integer "size"
+    t.date "lease_start_date"
+    t.boolean "furnished"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_habitations_on_user_id"
+  end
+
+  create_table "healths", force: :cascade do |t|
+    t.string "ssn"
+    t.string "social_security"
+    t.string "health_insurance"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_healths_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +53,6 @@ ActiveRecord::Schema.define(version: 2020_08_24_131834) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "habitations", "users"
+  add_foreign_key "healths", "users"
 end
