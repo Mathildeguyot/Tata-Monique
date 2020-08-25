@@ -1,7 +1,8 @@
 class Document < ApplicationRecord
   belongs_to :user
+  has_one_attached :photo
 
-  CATEGORIES = ["Familial", "Professional", "Health", "Habitation"]
+  CATEGORIES = ["La mif", "Le boulot", "La santé", "La casa"]
 
   validates :category, presence: true
   validates :name, presence: true

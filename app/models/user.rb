@@ -11,14 +11,14 @@ class User < ApplicationRecord
   has_one :professional_situation
   has_one :health
 
-  validates :first_name, presence: true
-  validates :last_name, presence: true
-  validates :email, presence: true
-  validates :encrypted_password, presence: true
-  validates :birth_date, presence: true
-  validates :birth_location, presence: true
-  validates :ID_number, presence: true, format: { with: /\A([0-9]{12})(X|V)\z/ }
-  validates :nationality, presence: true
-  validates :username, presence: true
+  # validates :first_name, presence: true
+  # validates :last_name, presence: true
+  # validates :email, presence: true
+  # validates :encrypted_password, presence: true
+  # validates :birth_date, presence: true
+  # validates :birth_location, presence: true
+  # validates :ID_number, presence: true, format: { with: /\A([0-9]{12})(X|V)\z/ }
+  # validates :nationality, presence: true
+  # validates :username, presence: true
 
 end
