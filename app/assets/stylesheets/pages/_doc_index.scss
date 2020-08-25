@@ -39,41 +39,39 @@
   background-color: $mid_blue;
 }
 
-.fas.fa-file-medical-alt {
-  color: $blue_purple;
-  opacity: 0.6;
-}
+.documents-category {
+  .fas.fa-heart {
+    color: $blue_purple;
+    opacity: 0.6;
+  &:hover {
+    opacity: 1;
+    }
+  }
 
-.fas.fa-file-medical-alt:hover {
-  opacity: 1;
-}
+  .fas.fa-file-medical-alt {
+    color: $blue_purple;
+    opacity: 0.6;
+  &:hover {
+    opacity: 1;
+    }
+  }
 
-.fas.fa-briefcase {
+  .fas.fa-briefcase {
   color: $light_gray;
   opacity: 0.6;
   font-size: 20px;
-}
+  &:hover {
+    opacity: 1;
+    }
+  }
 
-.fas.fa-briefcase:hover {
-  opacity: 1;
-}
-
-.fas.fa-heart {
-  color: $blue_purple;
-  opacity: 0.6;
-}
-
-.fas.fa-heart:hover {
-  opacity: 1;
-}
-
-.fas.fa-home {
+  .fas.fa-home {
   color: $light_gray;
   opacity: 0.6;
-}
-
-.fas.fa-home:hover {
-  opacity: 1;
+  &:hover{
+    opacity: 1;
+    }
+  }
 }
 
 
