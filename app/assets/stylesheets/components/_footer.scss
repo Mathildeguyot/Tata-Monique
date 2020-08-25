@@ -1,17 +1,58 @@
 .footer {
-  height: 150px;
-  background-color: #32333D;
-  padding : 20px 40px;
-  // -----
-  // OPTION : background dégradé
-  // background: linear-gradient(to right, $purple, $deep_purple, $blue_purple, #5390d9, $mid-blue, #48bfe3, #56cfe1, $light_blue, #72efdd, $blue_green);
-  // -----
+  color: rgba(0,0,0,0.7);
+  height: 300px;
+  padding : 0px 60px 40px 60px;
   h1 {
-    color: white;
+    color: $purple;
+    margin: 8px 0px 0px 8px;;
+    font-size: 30px;
+  }
+  img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.footer-content-wrapper {
+  border-top: 1px solid rgba(0,0,0,0.2);
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: 40px;
+}
+
+.footer-top {
+  box-sizing: border-box;
+  width: 100%;
+  h3 {
+    font-family: $body-font;
+    font-weight: 500;
+    font-size: 16px;
+  }
+  p {
+    font-weight: 200;
+    font-size: 12px;
+  }
+}
+
+.footer-bottom {
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 16px;
+  p {
+    font-weight: 200;
+    font-size: 12px;
+    margin: 8px 0px 0px 0px;
   }
 }
 
 .link-rounded {
   border-radius: 50%;
-  border: 2px solid #80FFDB;
+  border: 2px solid $deep_purple;
+  height: 32px;
+  width: 32px;
+  a {
+    font-size: 16px;
+    color: $deep_purple;
+  }
 }
+
