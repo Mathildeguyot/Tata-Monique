@@ -13,13 +13,12 @@
 
 .left-details {
   flex-grow: 1;
-  margin-top: 170px;
   width: 770px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 40px 0 40px;
+  padding: 170px 40px 0 40px;
   text-align: center;
   font-family: $headers-font;
   overflow: scroll;
@@ -59,7 +58,7 @@
     width:600px;
     text-align:left;
     padding:42px;
-    margin-bottom:20px;
+    margin-bottom:70px;
     border-radius: 20px;
 
 
@@ -98,6 +97,67 @@
     }
 
   }
+  .services {
+    height:420px;
+    width:600px;
+    padding:15px;
+    display: flex;
+    flex-direction: column;
+    margin-top:50px;
+
+    img {
+      width:130px;
+      height:100px;
+      margin-bottom:10px;
+      object-fit:contain;
+    }
+
+    img:hover {
+      width:140px;
+      opacity:0.8;
+      transition-duration:0.5s;
+    }
+    .serv-pub, .alloc, .impots,.ameli, .serv-etud, .droits-soc {
+      width: 130px;
+    }
+    .serv-pub {
+      position: relative;
+      top: 1px;
+      left: 1px;
+    }
+    .alloc {
+      position: relative;
+      left: 211px;
+      bottom: 106px;
+    }
+
+    .impots {
+      position: relative;
+      left: 422px;
+      bottom: 205px;
+    }
+
+    .ameli {
+      position: relative;
+      left: 422px;
+      bottom: 205px;
+    }
+
+    .serv-etud {
+      position: relative;
+      left: 216px;
+      bottom: 319px;
+    }
+
+    .droits-soc {
+      position: relative;
+      bottom: 428px;
+      right: 1px;
+    }
+
+
+  }
+
 }
 
 
