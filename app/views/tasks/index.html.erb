@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Ma to do</h1>
+  <% @tasks.each do |task| %>
+    <h2><%= task.organization %> - <%= task.name %></h2>
+    <p><%= task.descrition %></p>
+  <% end %>
+</div>
+
+
