@@ -131,4 +131,3 @@ ActiveRecord::Schema.define(version: 2020_08_24_143156) do
   add_foreign_key "usertasks", "tasks"
   add_foreign_key "usertasks", "users"
 end
-
