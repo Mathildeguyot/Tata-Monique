@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Select a category</h1>
+        <div class="documents-category">
+          <%= link_to "La mif", documents_path(category: "La mif"), class: "fas fa-heart" %>
+          <%= link_to "Le boulot", documents_path(category: "Le boulot"), class: "fas fa-briefcase" %>
+          <%= link_to "La santé", documents_path(category: "La santé"), class: "fas fa-file-medical" %>
+          <%= link_to "La casa", documents_path(category: "La casa"), class: "fas fa-home" %>
+        </div>
+
+      <ul>
+        <% @documents.each do |document| %>
+          <li><%= document.name %></li>
+          <li><%= document.category %></li>
+          <li><%= cl_image_tag document.photo.key, height: 400, width: 400, crop: :fill %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

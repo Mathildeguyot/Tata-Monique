@@ -1,2 +1,20 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container-home">
+  <div class="background-home">
+    <%= image_tag "https://res.cloudinary.com/dnjssngdu/image/upload/v1598348424/Tata%20Monique/bryan-garces-IXUM4cJynP0-unsplash_ehhhcg.jpg", alt: "alttext", width:700%>
+  </div>
+
+  <div class="left-details">
+    <div class="title">
+      <p>Finie la phobie administrative, laisse-faire </p>
+      <h2>Tata Monique</h2>
+    </div>
+
+    <div class="logo">
+      <%= image_tag "https://res.cloudinary.com/dnjssngdu/image/upload/v1598346926/Tata%20Monique/grandmother_1_hduhv1.png", width:100 %>
+    </div>
+    <div class="button">
+      <button type="button" class="btn btn-light"><%= link_to "Accéder à ma To-Do", root_path %></button>
+    </div>
+  </div>
+</div>
+
