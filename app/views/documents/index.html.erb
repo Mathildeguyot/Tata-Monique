@@ -9,11 +9,10 @@
         </div>
         <div class="category-docs">
           <% @documents.where(category: category).each do |document| %>
-          <%= document.name %>
+          <%= link_to document.name, document_path(document) %>
           <% end %>
         </div>
       </div>
     <% end %>
   </div>
 </div>
-
