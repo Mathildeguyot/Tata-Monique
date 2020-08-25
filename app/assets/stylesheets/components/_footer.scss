@@ -1,9 +1,14 @@
+$animate: all 0.2s ease-in-out;
+
 .footer {
   color: rgba(0,0,0,0.7);
   height: 300px;
   padding : 0px 60px 40px 60px;
+  margin-top: 48px;
   h1 {
-    color: $blue_purple;
+    background: -webkit-linear-gradient(120deg, $purple 0%, $blue_purple 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin: 8px 0px 0px 8px;;
     font-size: 30px;
   }
@@ -32,28 +37,49 @@
   p {
     font-weight: 200;
     font-size: 12px;
+    // .fa-heart {
+    //   background: -webkit-linear-gradient(120deg, $purple 0%, $blue_purple 100%);
+    //   -webkit-background-clip: text;
+    //   -webkit-text-fill-color: transparent;
+    // }
+  }
+  a {
+    text-decoration: none;
+    color: rgba(0,0,0,0.7);
+    display: inline-block
   }
 }
 
 .footer-bottom {
   box-sizing: border-box;
   width: 100%;
-  margin-top: 16px;
+  margin-top: 20px;
   p {
     font-weight: 200;
     font-size: 12px;
-    margin: 8px 0px 0px 0px;
+  }
+}
+
+.underline--magical {
+  background-size: 100% 0.4em;
+  background-position: 0 88%;
+  transition: background-size 0.25s ease-in;
+  &:hover {
+    background-image: linear-gradient(120deg, $purple 0%, $blue_purple 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 88%;
+    color: white;
   }
 }
 
 .link-rounded {
   border-radius: 50%;
-  border: 2px solid $blue_purple;
+  border: 2px solid $purple;
   height: 32px;
   width: 32px;
   a {
     font-size: 16px;
-    color: $blue_purple;
+    color: $purple;
     width: 24px;
     height: 24px;
     text-align: center;
@@ -62,7 +88,13 @@
     }
   }
   &:hover{
-    background-color: $blue_purple;
+    background: linear-gradient(120deg, $purple 0%, $blue_purple 100%);
   }
+}
+
+#made-by {
+  background: -webkit-linear-gradient(120deg, $purple 0%, $blue_purple 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
