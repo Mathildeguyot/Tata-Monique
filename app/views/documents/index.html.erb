@@ -1,21 +1,49 @@
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <h1>Select a category</h1>
-        <div class="documents-category">
-          <%= link_to "La mif", documents_path(category: "La mif"), class: "fas fa-heart" %>
-          <%= link_to "Le boulot", documents_path(category: "Le boulot"), class: "fas fa-briefcase" %>
-          <%= link_to "La santé", documents_path(category: "La santé"), class: "fas fa-file-medical" %>
-          <%= link_to "La casa", documents_path(category: "La casa"), class: "fas fa-home" %>
-        </div>
+<div class="docs">
 
-      <ul>
-        <% @documents.each do |document| %>
-          <li><%= document.name %></li>
-          <li><%= document.category %></li>
-          <li><%= cl_image_tag document.photo.key, height: 400, width: 400, crop: :fill %></li>
-        <% end %>
-      </ul>
+  <div class="docleft">
+    <div class="row">
+      <div class="col-3 top-left">
+        <div class="documents-category">
+        <%= link_to "La casa", documents_path(category: "La casa"), class: "category-link"%>
+        <i class ="fas fa-home"></i>
+        </div>
+      </div>
+      <div class ="col-3 top-right">
+        <div class="documents-category">
+        <%= link_to "La mif", documents_path(category: "La mif"), class: "category-link" %>
+         <i class ="fas fa-heart"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-3 bottom-left">
+        <div class="documents-category">
+        <%= link_to "La santé", documents_path(category: "La santé"), class: "category-link" %>
+        <i class="fas fa-file-medical-alt"></i>
+        </div>
+      </div>
+      <div class ="col-3 bottom-right">
+        <div class="documents-category">
+        <%= link_to "Le boulot", documents_path(category: "Le boulot"), class: "category-link" %>
+        <i class="fas fa-briefcase"> </i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="docright">
+    <div class="row">
+      <div class="col">
+        <h1>Tous les documents</h1>
+        <ul>
+          <% @documents.each do |document| %>
+            <%=link_to document.name, document_path(document), class: "doc-link" %>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
