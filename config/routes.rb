@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :documents
-  resources :tasks, only: [:index]
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :tasks, only: [:index] do
+    resources :subtask, only: [:edit, :update]
+  end
+  resources :subtask, only: [:show]
 end
