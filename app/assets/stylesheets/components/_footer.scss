@@ -3,7 +3,7 @@
   height: 300px;
   padding : 0px 60px 40px 60px;
   h1 {
-    color: $purple;
+    color: $blue_purple;
     margin: 8px 0px 0px 8px;;
     font-size: 30px;
   }
@@ -17,7 +17,8 @@
   border-top: 1px solid rgba(0,0,0,0.2);
   box-sizing: border-box;
   width: 100%;
-  padding-top: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .footer-top {
@@ -47,12 +48,21 @@
 
 .link-rounded {
   border-radius: 50%;
-  border: 2px solid $deep_purple;
+  border: 2px solid $blue_purple;
   height: 32px;
   width: 32px;
   a {
     font-size: 16px;
-    color: $deep_purple;
+    color: $blue_purple;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    &:hover {
+      color: white;
+    }
+  }
+  &:hover{
+    background-color: $blue_purple;
   }
 }
 
