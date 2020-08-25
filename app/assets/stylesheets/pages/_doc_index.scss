@@ -1,0 +1,87 @@
+.docs {
+  display: flex;
+}
+
+.documents-category {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.doc {
+  font-size: 50px;
+  text-decoration: none;
+  color: white;
+}
+
+.doc:hover {
+  text-decoration: none;
+}
+
+.top-left {
+  background-color: $mid_blue;
+  height: 50vh;
+}
+
+.top-right {
+  background-color: $mid_blue;
+  height: 50vh;
+
+}
+
+.bottom-left {
+  background-color: $mid_blue;
+  height: 50vh;
+
+}
+
+.bottom-right {
+  background-color: $mid_blue;
+}
+
+.fas.fa-file-medical-alt {
+  color: $blue_purple;
+  opacity: 0.6;
+}
+
+.fas.fa-file-medical-alt:hover {
+  opacity: 1;
+}
+
+.fas.fa-briefcase {
+  color: $light_gray;
+  opacity: 0.6;
+  font-size: 20px;
+}
+
+.fas.fa-briefcase:hover {
+  opacity: 1;
+}
+
+.fas.fa-heart {
+  color: $blue_purple;
+  opacity: 0.6;
+}
+
+.fas.fa-heart:hover {
+  opacity: 1;
+}
+
+.fas.fa-home {
+  color: $light_gray;
+  opacity: 0.6;
+}
+
+.fas.fa-home:hover {
+  opacity: 1;
+}
+
+
+// $purple: #7400B8;
+// $deep_purple: #6930C3;
+// $blue_purple: #5E60CE;
+// $mid_blue: #4EA8DE;
+// $light_blue: #64DFDF;
+// $blue_green: #80FFDB;
+// $light_gray: #F4F4F4;
+// $dark_gray: #6e6d6d;
