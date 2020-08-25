@@ -22,13 +22,41 @@
   text-align: center;
   font-family: $headers-font;
   overflow: scroll;
-  button {
+
+  .logo img {
+    top: 1px;
+    width: 70px;
+  }
+
+  .buttons {
+    display: flex;
+  }
+
+  #to-do {
+    border-radius: 30px 0 0 30px;
     font-size: 51px;
     background-color: $deep_purple;
     color:white;
     padding: 24px;
-    border-radius: 56px;
     margin-bottom:100px;
+  }
+
+  #to-do:hover a {
+    color:black
+  }
+
+  #change {
+    border-radius: 0 30px 30px 0;
+    width: 329px;
+    background-color: $light-blue;
+    font-size: 51px;
+    color:white;
+    padding: 24px;
+    margin-bottom:100px;
+  }
+
+  #change:hover a{
+    color:black
   }
 
   a {
@@ -36,13 +64,6 @@
     color:white
   }
 
-  button:hover {
-    font-size: 51px;
-    background-color: $light_blue;
-    color:white;
-    padding: 24px;
-    border-radius: 56px;
-  }
 
   p {
     font-family: $body-font;
