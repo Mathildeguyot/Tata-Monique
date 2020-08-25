@@ -12,9 +12,19 @@
     <div class="logo">
       <%= image_tag "https://res.cloudinary.com/dnjssngdu/image/upload/v1598346926/Tata%20Monique/grandmother_1_hduhv1.png", width:100 %>
     </div>
-    <div class="button">
-      <button type="button" class="btn btn-light"><%= link_to "Accéder à ma To-Do", root_path %></button>
+    <div class="buttons">
+      <div class="button">
+        <button type="button" class="btn btn-light" id="to-do">
+          <%= link_to "Accéder à ma To-Do", root_path %>
+        </button>
+      </div>
+      <div class="button">
+        <button type="button" class="btn btn-light" id="change">
+          <%= link_to "Déclarer un changement", root_path %>
+        </button>
+      </div>
     </div>
+
 
     <div class="services">
       <div class="serv-pub">
