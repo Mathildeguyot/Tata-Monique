@@ -3,7 +3,7 @@
     <div class="col">
       <h1> <%=  @document.name %></h1>
       <h3> <%= @document.category %> </h3>
-      <%= cl_image_tag @document.photo.key, height: 400, width: 400, crop: :fill %>
+      <%= cl_image_tag @document.photo.key %>
     </div>
   </div>
 </div>
