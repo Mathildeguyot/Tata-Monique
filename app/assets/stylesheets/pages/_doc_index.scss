@@ -3,7 +3,6 @@
 }
 
 .documents-category {
-  display:flex;
   justify-content: center;
   align-items: center;
 }
@@ -19,24 +18,24 @@
 }
 
 .top-left {
-  background-color: $mid_blue;
+  background-color: $blue_green;
   height: 50vh;
 }
 
 .top-right {
-  background-color: $mid_blue;
+  background-color: $blue_green;
   height: 50vh;
 
 }
 
 .bottom-left {
-  background-color: $mid_blue;
+  background-color: $blue_green;
   height: 50vh;
 
 }
 
 .bottom-right {
-  background-color: $mid_blue;
+  background-color: $blue_green;
 }
 
 .fas.fa-file-medical-alt {
