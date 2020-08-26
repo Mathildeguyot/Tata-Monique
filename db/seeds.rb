@@ -61,13 +61,11 @@ subtask2 = Subtask.new(name:"Remplis le questionnaire de la CAF", description:"R
 
 subtask3 = Subtask.new(name:"Complète ton attestation de loyer", description:"Pour finir, télécharge ton attestation de loyer ici 'https://www.aide-sociale.fr/wp-content/uploads/2018/05/attestation-loyer-apl-21.pdf' et upload là sur ton compte CAF", done: false, deadline: Date.new(2020, 8, 20))
 
-
 [subtask1, subtask2, subtask3].each do |subtask|
   subtask.task = task3
   subtask.save
 end
 
-# Ameli subtasks
 subtask4 = Subtask.new(name: "Créé-toi un compte", description: "Tu n'as probablement pas encore de compte Ameli. Rends-toi sur le site Ameli.fr, grâce à l'extension Tata Monique, tous les champs seront préremplis, même pas besoin d'aller chercher ta carte vitale !", deadline: Date.new(2020, 9, 1), done: false)
 
 
