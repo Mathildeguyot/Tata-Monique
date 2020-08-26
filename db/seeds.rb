@@ -34,3 +34,12 @@ task7 = Task.new(name:"Fais ta première déclaration d'impôts", description:"G
 
 # subtask1 = Subtask.new(name:"Prépare tes documents", description:"Pour percevoir les APL, tu as besoin de plusieurs documents, mais ne t'inquiète pas, ils sont facilement trouvables !", done:false, deadline:Date.new(2020, 9, 15))
 # subtask2 = Subtask.new(name:"Remplis le questionnaire de la CAF", description:"La CAF ", done:, deadline:)
+
+subtask4 = Subtask.new(name: "Créé-toi un compte", description: "Tu n'as probablement pas encore de compte Ameli. Rends-toi sur le site Ameli.fr, grâce à l'extension Tata Monique, tous les champs seront préremplis, même pas besoin d'aller chercher ta carte vitale !", deadline: Date.new(2020, 9, 1), done: false)
+subtask4.save
+
+subtask5 = Subtask.new(name: "Déclare ton changement d'adresse", description: "Clique ici ! Encore une fois, tous les champs sont préremplis avec l'adresse de ton nouveau logement. Tu devrais recevoir un petit mail d'Ameli dans les 7 jours pour te confirmer ton changement d'adresse. Je t'enverrai un petit rappel de vérification !", deadline: Date.new(2020, 9, 2), done: false)
+subtask5.save
+
+task5.subtasks = [subtask4, subtask5]
+
