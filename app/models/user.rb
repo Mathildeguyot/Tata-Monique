@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :tasks, through: :usertasks
   has_many :documents
+  has_many :usertasks
   has_one :habitation
   has_one :familial_situation
   has_one :professional_situation
