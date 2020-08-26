@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :documents
   resources :tasks, only: [:index] do
-    resources :subtask, only: [:index, :edit, :update]
+    resources :subtasks, only: [:index, :edit, :update]
   end
 end

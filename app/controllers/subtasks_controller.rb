@@ -1,24 +1,15 @@
 class SubtasksController < ApplicationController
-  before_action :set_subtask, only:  :edit
-
+  before_action :set_task, only: :index
   def index
-    @subtasks = Subtask.all
-  end
-
-  def edit
-  end
-
-  def update
-    @subtask.update(subtask_params)
-    redirect_to task_subtask_path(@subtask)
+    @subtasks = @task.subtasks
   end
 
   private
   def subtask_params
-    params.require(:subtask).permit(:name, :description, :deadline)
+    params.require(:task).permit(:name, :description, :deadline)
   end
 
-  def set_subtask
-    @subtask = Subtask.find(params[:id])
+  def set_task
+    @task = Task.find(params[:task_id])
   end
 end
