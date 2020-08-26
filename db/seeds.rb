@@ -23,14 +23,14 @@ professional_situation = ProfessionalSituation.new(income: 600, occupation: "ven
 professional_situation.user = edouard
 professional_situation.save
 
-task1 = Task.new(name:, description:, done:, deadline: Date.new(), organization:)
-task2 = Task.new(name:"Déclare ton changement de situation à AMELI", description:"Doudou, tu entres dans la vie active, donc tu n'as plus droit à la Sécu étudiante, tu dois donc informer l'assurance maladie Ameli de ta nouvelle situation", done:false, deadline: Date.new(2020,9,15), organization:"Ameli")
-task3 = Task.new(name:"Fais ta demande d'APL", description:"Tu viens d'emménager, il est temps de faire une demande d'APL, ça va te faire économiser sur ton loyer", done:false, deadline: Date.new(2020,9,20), organization:"CAF")
-task4 = Task.new(name:"Fais ta première déclaration d'impôts", description:"Garde ça dans un coin de ta tête, au mois de juin, tu devras faire ta première déclaration d'impôts !", done:false, deadline: Date.new(2020,6,12), organization:"Impots.gouv")
-task5 = Task.new(name:, description:, done:, deadline: Date.new(), organization:)
-task6 = Task.new(name:, description:, done:, deadline: Date.new(), organization:)
-task7 = Task.new(name:, description:, done:, deadline: Date.new(), organization:)
+
+task1 = Task.new(name: "Souscris à une assurance habitation", description: "Tu seras bien content de l'avoir si jamais tu as un dégât des eaux.", done: false, deadline: Date.new(2020, 8, 14), organization: "Luko")
+task2 = Task.new(name: "Change ton adresse postale", description: "Mon Doudou, dès que tu déménages il faut prévenir la poste pour rediriger ton courrier au bon endroit !", done: true, deadline: Date.new(2020, 8, 15), organization: "La Poste")
+task3 = Task.new(name:"Fais ta demande d'APL", description:"Tu viens d'emménager, il est temps de faire une demande d'APL, ça va te faire économiser sur ton loyer", done:false, deadline: Date.new(2020, 8, 20), organization:"CAF")
+task4 = Task.new(name: "Informe ta banque de ton changement d'adresse", description: "Le Crédit Agricole fonctionne par région, je te conseille de changer d'adresse pour éviter de retourner là-bas pour la moindre démarche !", done: , deadline: Date.new(2020, 8, 20), organization:)
+task5 = Task.new(name:"Déclare ton changement de situation à AMELI", description:"Doudou, tu entres dans la vie active, donc tu n'as plus droit à la Sécu étudiante, tu dois donc informer l'assurance maladie Ameli de ta nouvelle situation", done:false, deadline: Date.new(2020,9,15), organization:"Ameli")
+task6 = Task.new(name: "Dis moi quelle est ta mutuelle", description: "Maintenant que tu joues dans la cour des grands tu as le droit à une mutuelle santé payée par ton travail.", done: false, deadline: Date.new(2020, 9, 15), organization: "Tata Monique")
+task7 = Task.new(name:"Fais ta première déclaration d'impôts", description:"Garde ça dans un coin de ta tête, au mois de juin, tu devras faire ta première déclaration d'impôts !", done:false, deadline: Date.new(2020,6,12), organization:"Impots.gouv")
 
 # subtask1 = Subtask.new(name:"Prépare tes documents", description:"Pour percevoir les APL, tu as besoin de plusieurs documents, mais ne t'inquiète pas, ils sont facilement trouvables !", done:false, deadline:Date.new(2020, 9, 15))
 # subtask2 = Subtask.new(name:"Remplis le questionnaire de la CAF", description:"La CAF ", done:, deadline:)
-
