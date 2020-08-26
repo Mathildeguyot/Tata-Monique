@@ -4,5 +4,5 @@ class Task < ApplicationRecord
   validates :description, presence: true
   validates :done, presence: true
   validates :deadline, presence: true
-  validates :organization, presence: true, inclusion: { in: %w(CAF AMELI IMPOTS.GOUV)}
+  validates :organization, presence: true
 end

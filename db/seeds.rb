@@ -23,10 +23,10 @@ professional_situation = ProfessionalSituation.new(income: 600, occupation: "ven
 professional_situation.user = edouard
 professional_situation.save
 
-task1 = Task.new(name:, description:, done:, deadline: Date.new(), organization:)
+task1 = Task.new(name: "Change ton adresse postale", description: "Mon Doudou, dès que tu déménages il faut prévenir la poste pour rediriger ton courrier au bon endroit !", done: true, deadline: Date.new(2020, 8, 15), organization: "La Poste")
 task2 = Task.new(name:, description:, done:, deadline: Date.new(), organization:)
 task3 = Task.new(name:, description:, done:, deadline: Date.new(), organization:)
 task4 = Task.new(name:, description:, done:, deadline: Date.new(), organization:)
-task5 = Task.new(name:, description:, done:, deadline: Date.new(), organization:)
-task6 = Task.new(name:, description:, done:, deadline: Date.new(), organization:)
-task7 = Task.new(name:, description:, done:, deadline: Date.new(), organization:)
+task5 = Task.new(name: "Souscris à une assurance habitation", description: "Tu seras bien content de l'avoir si jamais tu as un dégât des eaux.", done: false, deadline: Date.new(2020, 8, 15), organization: "Luko")
+task6 = Task.new(name: "Informe ta banque de ton changement d'adresse", description: "Le Crédit Agricole fonctionne par région, je te conseille de changer d'adresse pour éviter de retourner là-bas pour la moindre démarche !", done: , deadline: Date.new(2020, 8, 20), organization:)
+task7 = Task.new(name: "Dis moi quelle est ta mutuelle", description: "Maintenant que tu joues dans la cours des grands tu as le droit à une mutuelle santé payée par ton travail.", done: false, deadline: Date.new(2020, 9, 15), organization: "Tata Monique")
