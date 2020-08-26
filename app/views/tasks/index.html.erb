@@ -1,14 +1,16 @@
 <div class="container">
-  <h1>Ma to do</h1>
-  <h2>blabla</h2>
+  <h1 id="title">Ma to do</h1>
   <% @tasks.each do |task| %>
-    <h2><%= task.organization %> - <%= task.name %></h2>
-    <p><%= task.description %></p>
+    <div class="owl-task">
+      <i class="fas fa-check" id="done"></i>
+      <div class="task-card">
+        <h2><span class="underline--magical"><%= task.organization %></span></h2>
+        <h3><%= task.name %></h3>
+        <p><%= task.description %></p>
+      </div>
+    </div>
   <% end %>
 </div>
-<% @subtasks.each do |subtask| %>
-  <%= subtask.name %>
-<% end %>
 
 
 
