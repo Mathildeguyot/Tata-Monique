@@ -36,7 +36,7 @@ professional_situation.user = edouard
 professional_situation.save
 
 
-task1 = Task.new(name: "Souscris à une assurance habitation", description: "Tu seras bien content de l'avoir si jamais tu as un dégât des eaux.", done: false, deadline: Date.new(2020, 8, 14), organization: "Luko")
+task1 = Task.new(name: "Souscris à une assurance habitation", description: "Tu seras bien content de l'avoir si jamais tu as un dégât des eaux.", done: true, deadline: Date.new(2020, 8, 14), organization: "Luko")
 task1.save
 task2 = Task.new(name: "Change ton adresse postale", description: "Mon Doudou, dès que tu déménages il faut prévenir la poste pour rediriger ton courrier au bon endroit !", done: true, deadline: Date.new(2020, 8, 15), organization: "La Poste")
 task2.save

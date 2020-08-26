@@ -1,6 +1,10 @@
 .task-card {
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
   width: 650px;
-  padding: 20px 20px;
+  padding: 20px 30px;
   margin: 15px 10px;
+  .top-card {
+    display: flex;
+    justify-content: space-between;
+  }
 }

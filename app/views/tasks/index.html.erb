@@ -2,12 +2,25 @@
   <h1 id="title">Ma to do</h1>
   <% @tasks.each do |task| %>
     <div class="owl-task">
-      <i class="fas fa-check" id="done"></i>
+      <% if task.done %>
+        <i class="fas fa-check" id="done"></i>
+      <% else %>
+        <i class="fas fa-times" id="todo"></i>
+      <% end %>
       <div class="task-card">
-        <h2><span class="underline--magical"><%= task.organization %></span></h2>
+        <div class="top-card">
+          <h2><span class="underline--magical"><%= task.organization %></span></h2>
+          <p><%= task.deadline %></p>
+        </div>
         <h3><%= task.name %></h3>
         <p><%= task.description %></p>
         <%= link_to "link",  task_subtasks_path(task) %>
+      </div>
+      <div class="module-border-wrap">
+        <div class="module">
+          <%= link_to "", tasks_path, class: "fas fa-arrow-right", id: "go"  %>
+          <!-- <i class="fas fa-arrow-right" id="go"></i> -->
+        </div>
       </div>
     </div>
   <% end %>
