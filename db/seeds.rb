@@ -32,8 +32,6 @@ task5 = Task.new(name:"Déclare ton changement de situation à AMELI", descripti
 task6 = Task.new(name: "Dis moi quelle est ta mutuelle", description: "Maintenant que tu joues dans la cour des grands tu as le droit à une mutuelle santé payée par ton travail.", done: false, deadline: Date.new(2020, 9, 15), organization: "Tata Monique")
 task7 = Task.new(name:"Fais ta première déclaration d'impôts", description:"Garde ça dans un coin de ta tête, au mois de juin, tu devras faire ta première déclaration d'impôts !", done:false, deadline: Date.new(2020,6,12), organization:"Impots.gouv")
 
-
-
 # CAF Subtasks
 subtask1 = Subtask.new(name:"Prépare tes documents", description:"Pour percevoir les APL, tu as besoin de plusieurs documents, mais ne t'inquiète pas, ils sont facilement trouvables !", done:false, deadline:Date.new(2020, 8, 18))
 subtask1.save
@@ -43,15 +41,6 @@ subtask3 = Subtask.new(name:"Complète ton attestation de loyer", description:"P
 subtask3.save
 
 task3.subtasks = [subtask1, subtask2, subtask3]
-
-# Ameli subtasks
-subtask4 = Subtask.new(name: "Créé-toi un compte", description: "Tu n'as probablement pas encore de compte Ameli. Rends-toi sur le site Ameli.fr, grâce à l'extension Tata Monique, tous les champs seront préremplis, même pas besoin d'aller chercher ta carte vitale !", deadline: Date.new(2020, 9, 1), done: false)
-subtask4.save
-
-subtask5 = Subtask.new(name: "Déclare ton changement d'adresse", description: "Clique ici ! Encore une fois, tous les champs sont préremplis avec l'adresse de ton nouveau logement. Tu devrais recevoir un petit mail d'Ameli dans les 7 jours pour te confirmer ton changement d'adresse. Je t'enverrai un petit rappel de vérification !", deadline: Date.new(2020, 9, 2), done: false)
-subtask5.save
-
-task5.subtasks = [subtask4, subtask5]
 
 # # Assurance habitation Subtasks
 # subtask6 = Subtask.new(name:"", description:, done:, deadline:)
