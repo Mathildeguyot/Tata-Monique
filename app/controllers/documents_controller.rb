@@ -18,7 +18,7 @@ class DocumentsController < ApplicationController
     @document = Document.new(params_document)
     @document.user = current_user
     if @document.save
-      redirect_to document_path(@document)
+      redirect_to documents_path
     else
       render :new
     end
