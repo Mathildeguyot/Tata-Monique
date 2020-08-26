@@ -7,11 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Usertask.destroy_all
 Health.destroy_all
-Task.destroy_all
 Subtask.destroy_all
+Task.destroy_all
 Habitation.destroy_all
 FamilialSituation.destroy_all
 ProfessionalSituation.destroy_all
+Document.destroy_all
 User.destroy_all
 
 edouard = User.new(first_name: "Edouard", last_name: "Giroult", birth_date: Date.new(1998, 7, 12), phone_number: "06 21 56 65 45 87", ID_number: "1700569254145", nationality: "française", birth_location: "Lyon", email: "doudou.giroult@gmail.com", password: "tatamonique", username: "Doudou")
@@ -55,23 +56,19 @@ task7.save
 end
 
 # CAF Subtasks
-subtask1 = Subtask.new(name:"Prépare tes documents", description:"Pour percevoir les APL, tu as besoin de plusieurs documents, mais ne t'inquiète pas, ils sont facilement trouvables !", done:false, deadline:Date.new(2020, 8, 18))
+subtask1 = Subtask.new(name:"Upload ta carte d'identité", description:"La CAF a besoin de vérifier ton identité", done:false, deadline:Date.new(2020, 8, 18))
+subtask2 = Subtask.new(name:"Upload ton RIB", description:"Entre le RIB sur lequel tu veux que les APL soient versés", done:false, deadline:Date.new(2020, 8, 18))
+subtask3 = Subtask.new(name:"Upload ton contrat de location", description:"La CAF a besoin de vérifier que tu es bien locataire", done:false, deadline:Date.new(2020, 8, 18))
+subtask4 = Subtask.new(name:"Complète ton attestation de loyer", description:"Pour finir, télécharge ton attestation de loyer ici 'https://www.aide-sociale.fr/wp-content/uploads/2018/05/attestation-loyer-apl-21.pdf' et upload là ici", done: false, deadline: Date.new(2020, 8, 20))
+subtask5 = Subtask.new(name:"Bientôt fini ! Remplis le questionnaire de la CAF", description:"Rends toi sur à l'adresse 'https://wwwd.caf.fr/wps/portal/caffr/aidesetservices/lesservicesenligne/faireunedemandedeprestation/demanderlaideaulogement', tous les champs seront déja pré-remplis par Tata Monique !", done:false, deadline:Date.new(2020, 8, 18))
 
-subtask2 = Subtask.new(name:"Remplis le questionnaire de la CAF", description:"Rends toi sur à l'adresse 'https://wwwd.caf.fr/wps/portal/caffr/aidesetservices/lesservicesenligne/faireunedemandedeprestation/demanderlaideaulogement', tous les champs seront déja pré-remplis par Tata Monique !", done:false, deadline:Date.new(2020, 8, 18))
-
-subtask3 = Subtask.new(name:"Complète ton attestation de loyer", description:"Pour finir, télécharge ton attestation de loyer ici 'https://www.aide-sociale.fr/wp-content/uploads/2018/05/attestation-loyer-apl-21.pdf' et upload là sur ton compte CAF", done: false, deadline: Date.new(2020, 8, 20))
-
-[subtask1, subtask2, subtask3].each do |subtask|
+[subtask1, subtask2, subtask3, subtask4, subtask5].each do |subtask|
   subtask.task = task3
   subtask.save
 end
 
 subtask4 = Subtask.new(name: "Créé-toi un compte", description: "Tu n'as probablement pas encore de compte Ameli. Rends-toi sur le site Ameli.fr, grâce à l'extension Tata Monique, tous les champs seront préremplis, même pas besoin d'aller chercher ta carte vitale !", deadline: Date.new(2020, 9, 1), done: false)
-
-
 subtask5 = Subtask.new(name: "Déclare ton changement d'adresse", description: "Clique ici ! Encore une fois, tous les champs sont préremplis avec l'adresse de ton nouveau logement. Tu devrais recevoir un petit mail d'Ameli dans les 7 jours pour te confirmer ton changement d'adresse. Je t'enverrai un petit rappel de vérification !", deadline: Date.new(2020, 9, 2), done: false)
-
-
 [subtask4, subtask5].each do |subtask|
   subtask.task = task5
   subtask.save
