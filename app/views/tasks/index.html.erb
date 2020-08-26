@@ -7,7 +7,7 @@
         <h2><span class="underline--magical"><%= task.organization %></span></h2>
         <h3><%= task.name %></h3>
         <p><%= task.description %></p>
-        <%= link_to "link",  task_subtask_index_path(task) %>
+        <%= link_to "link",  task_subtasks_path(task) %>
       </div>
     </div>
   <% end %>

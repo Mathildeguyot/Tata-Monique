@@ -2,12 +2,12 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:show]
   def index
     @tasks = Task.all
-    @subtasks = Subtask.all
+    # @subtasks = Subtask.all
   end
 
-  def show
-    @subtask.task = @task
-  end
+  # def show
+  #   @subtasks = Subtask.all
+  # end
 
   private
 
