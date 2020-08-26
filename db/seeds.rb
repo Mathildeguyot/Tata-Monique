@@ -55,12 +55,13 @@ task7.save
   Usertask.create(task: task, user: edouard)
 end
 
+
 # CAF Subtasks
 subtask1 = Subtask.new(name:"Upload ta carte d'identité", description:"La CAF a besoin de vérifier ton identité", done:false, deadline:Date.new(2020, 8, 18))
 subtask2 = Subtask.new(name:"Upload ton RIB", description:"Entre le RIB sur lequel tu veux que les APL soient versés", done:false, deadline:Date.new(2020, 8, 18))
 subtask3 = Subtask.new(name:"Upload ton contrat de location", description:"La CAF a besoin de vérifier que tu es bien locataire", done:false, deadline:Date.new(2020, 8, 18))
 subtask4 = Subtask.new(name:"Complète ton attestation de loyer", description:"Pour finir, télécharge ton attestation de loyer ici 'https://www.aide-sociale.fr/wp-content/uploads/2018/05/attestation-loyer-apl-21.pdf' et upload là ici", done: false, deadline: Date.new(2020, 8, 20))
-subtask5 = Subtask.new(name:"Bientôt fini ! Remplis le questionnaire de la CAF", description:"Rends toi sur à l'adresse 'https://wwwd.caf.fr/wps/portal/caffr/aidesetservices/lesservicesenligne/faireunedemandedeprestation/demanderlaideaulogement', tous les champs seront déja pré-remplis par Tata Monique !", done:false, deadline:Date.new(2020, 8, 18))
+subtask5 = Subtask.new(name:"Bientôt fini ! Remplis le questionnaire de la CAF", description:"Rends toi à l'adresse #{"<a href='https://wwwd.caf.fr/wps/portal/caffr/aidesetservices/lesservicesenligne/faireunedemandedeprestation/demanderlaideaulogement'>Website</a>"}, tous les champs seront déja pré-remplis par Tata Monique !", done:false, deadline:Date.new(2020, 8, 18))
 
 [subtask1, subtask2, subtask3, subtask4, subtask5].each do |subtask|
   subtask.task = task3
