@@ -32,5 +32,16 @@ task5 = Task.new(name:"Déclare ton changement de situation à AMELI", descripti
 task6 = Task.new(name: "Dis moi quelle est ta mutuelle", description: "Maintenant que tu joues dans la cour des grands tu as le droit à une mutuelle santé payée par ton travail.", done: false, deadline: Date.new(2020, 9, 15), organization: "Tata Monique")
 task7 = Task.new(name:"Fais ta première déclaration d'impôts", description:"Garde ça dans un coin de ta tête, au mois de juin, tu devras faire ta première déclaration d'impôts !", done:false, deadline: Date.new(2020,6,12), organization:"Impots.gouv")
 
-# subtask1 = Subtask.new(name:"Prépare tes documents", description:"Pour percevoir les APL, tu as besoin de plusieurs documents, mais ne t'inquiète pas, ils sont facilement trouvables !", done:false, deadline:Date.new(2020, 9, 15))
-# subtask2 = Subtask.new(name:"Remplis le questionnaire de la CAF", description:"La CAF ", done:, deadline:)
+# CAF Subtasks
+subtask1 = Subtask.new(name:"Prépare tes documents", description:"Pour percevoir les APL, tu as besoin de plusieurs documents, mais ne t'inquiète pas, ils sont facilement trouvables !", done:false, deadline:Date.new(2020, 8, 18))
+subtask1.save
+subtask2 = Subtask.new(name:"Remplis le questionnaire de la CAF", description:"Rends toi sur à l'adresse 'https://wwwd.caf.fr/wps/portal/caffr/aidesetservices/lesservicesenligne/faireunedemandedeprestation/demanderlaideaulogement', tous les champs seront déja pré-remplis par Tata Monique !", done:false, deadline:Date.new(2020, 8, 18))
+subtask2.save
+subtask3 = Subtask.new(name:"Complète ton attestation de loyer", description:"Pour finir, télécharge ton attestation de loyer ici 'https://www.aide-sociale.fr/wp-content/uploads/2018/05/attestation-loyer-apl-21.pdf' et upload là sur ton compte CAF", done:, deadline:)
+subtask3.save
+
+task3.subtasks = [subtask1, subtask2, subtask3]
+
+# # Assurance habitation Subtasks
+# subtask6 = Subtask.new(name:"", description:, done:, deadline:)
+
