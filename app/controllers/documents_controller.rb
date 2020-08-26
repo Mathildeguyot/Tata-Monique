@@ -39,7 +39,7 @@ class DocumentsController < ApplicationController
 
   def destroy
     @document.destroy
-    redirect_to dashboard_path
+    redirect_to documents_path
   end
 
   private
