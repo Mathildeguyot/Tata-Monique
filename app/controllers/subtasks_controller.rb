@@ -2,6 +2,7 @@ class SubtasksController < ApplicationController
   before_action :set_task, only: [:index]
   def index
     @subtasks = @task.subtasks
+    @active_subtask = @subtasks.select{|subtask| !subtask.done}.first
   end
 
   # def edit
@@ -16,8 +17,6 @@ class SubtasksController < ApplicationController
   #     render :new
   #   end
   # end
-
-
 
   private
   def task_params

@@ -26,6 +26,9 @@
   .done-and-line {
     display: flex;
     align-items: center;
+    .todo {
+      margin-right: 0px;
+    }
     .todo.medium-todo {
       font-size: 23px;
       padding: 10px 14px;
