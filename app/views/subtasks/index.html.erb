@@ -1,12 +1,36 @@
 <div class="container">
   <h1 id="title">Hop, voilà quelques détails !</h1>
+  <div class="chronology">
+    <% @subtasks.each do |subtask| %>
+      <div class="done-and-line">
+        <% if subtask.done %>
+          <i class="fas fa-check done medium-done"></i>
+          <div class="line-done-hor <%= "next-to-do" if !subtask.next_is_done? %>"></div>
+        <% elsif subtask == @subtasks.last %>
+          <i class="fas fa-times todo"></i>
+        <% else %>
+          <i class="fas fa-times todo medium-todo"></i>
+          <div class="line-todo-hor"></div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
   <% @subtasks.each do |subtask| %>
     <div class="owl-task">
-      <div class="task-card">
-        <h3><%= subtask.name %></h3>
+      <div class="subtask-card">
+        <div class="top-card">
+          <h3><%= subtask.name %></h3>
+          <div class="corner-right">
+            <p><%= subtask.deadline %></p>
+            <% if subtask.done %>
+              <i class="fas fa-check done done-small"></i>
+            <% else %>
+              <i class="fas fa-times todo todo-small"></i>
+            <% end %>
+          </div>
+        </div>
         <p><%= subtask.description %></p>
       </div>
     </div>
   <% end %>
 </div>
-

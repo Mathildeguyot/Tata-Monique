@@ -3,12 +3,12 @@
   <% @tasks.each do |task| %>
     <div class="owl-task">
       <% if task.done %>
-        <i class="fas fa-check" id="done"></i>
+        <i class="fas fa-check done"></i>
         <div class="line-done <%= "next-to-do" if !task.next_is_done? %>"></div>
       <% elsif task == @tasks.last %>
-        <i class="fas fa-times" id="todo"></i>
+        <i class="fas fa-times todo"></i>
       <% else %>
-        <i class="fas fa-times" id="todo"></i>
+        <i class="fas fa-times todo"></i>
         <div class="line-todo"></div>
       <% end %>
       <div class="task-card">
