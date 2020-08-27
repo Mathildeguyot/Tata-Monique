@@ -2,9 +2,9 @@
   <h1 id="title">Ma to do</h1>
   <% @tasks.each do |task| %>
     <div class="owl-task">
-      <% if task.done %>
+      <% if Usertask.find_by(user:current_user, task:task).done %>
         <i class="fas fa-check" id="done"></i>
-        <div class="line-done <%= "next-to-do" if !task.next_is_done? %>"></div>
+        <div class="line-done <%= "next-to-do" if !Usertask.find_by(user:current_user, task:task).next_is_done? %>"></div>
       <% elsif task == @tasks.last %>
         <i class="fas fa-times" id="todo"></i>
       <% else %>
@@ -27,6 +27,5 @@
     </div>
   <% end %>
 </div>
-
 
 
