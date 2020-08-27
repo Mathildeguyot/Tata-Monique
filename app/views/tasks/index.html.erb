@@ -14,11 +14,10 @@
         </div>
         <h3><%= task.name %></h3>
         <p><%= task.description %></p>
-        <%= link_to "link",  task_subtasks_path(task) %>
       </div>
       <div class="module-border-wrap">
         <div class="module">
-          <%= link_to "", tasks_path, class: "fas fa-arrow-right", id: "go"  %>
+          <%= link_to "", task_subtasks_path(task), class: "fas fa-arrow-right", id: "go"  %>
           <!-- <i class="fas fa-arrow-right" id="go"></i> -->
         </div>
       </div>
