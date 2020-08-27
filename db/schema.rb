@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_26_161430) do
+ActiveRecord::Schema.define(version: 2020_08_27_133212) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -101,6 +101,8 @@ ActiveRecord::Schema.define(version: 2020_08_26_161430) do
     t.bigint "task_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "subtask_type"
+    t.string "document_type"
     t.index ["task_id"], name: "index_subtasks_on_task_id"
   end
 
@@ -134,6 +136,16 @@ ActiveRecord::Schema.define(version: 2020_08_26_161430) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "usersubtasks", force: :cascade do |t|
+    t.boolean "done"
+    t.bigint "user_id", null: false
+    t.bigint "subtask_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["subtask_id"], name: "index_usersubtasks_on_subtask_id"
+    t.index ["user_id"], name: "index_usersubtasks_on_user_id"
+  end
+
   create_table "usertasks", force: :cascade do |t|
     t.bigint "task_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -150,6 +162,8 @@ ActiveRecord::Schema.define(version: 2020_08_26_161430) do
   add_foreign_key "healths", "users"
   add_foreign_key "professional_situations", "users"
   add_foreign_key "subtasks", "tasks"
+  add_foreign_key "usersubtasks", "subtasks"
+  add_foreign_key "usersubtasks", "users"
   add_foreign_key "usertasks", "tasks"
   add_foreign_key "usertasks", "users"
 end
