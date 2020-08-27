@@ -28,6 +28,20 @@
   margin-right: 30px;
 }
 
+.line-done {
+  background: linear-gradient(45deg, #64DFDF, #80FFDB);
+  width: 5px;
+  height: 180px;
+  position: relative;
+  right: 78px;
+  top: 100px;
+  z-index: -1;
+}
+
+.line-done.next-to-do {
+  background: linear-gradient(45deg, $mid_blue, #80FFDB);
+}
+
 #todo {
   color: white;
   background: linear-gradient(45deg, $deep_purple, $mid_blue);
@@ -36,6 +50,16 @@
   font-size: 50px;
   height: 90px;
   margin-right: 30px;
+}
+
+.line-todo {
+  background: linear-gradient(45deg, $mid_blue, $deep_purple);
+  width: 5px;
+  height: 180px;
+  position: relative;
+  right: 78px;
+  top: 100px;
+  z-index: -1;
 }
 
 .module-border-wrap {
