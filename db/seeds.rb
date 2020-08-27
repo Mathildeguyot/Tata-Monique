@@ -1,6 +1,6 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
+require "open-uri"
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
@@ -34,6 +34,11 @@ familial_situation.save
 professional_situation = ProfessionalSituation.new(income: 600, occupation: "vendeur", fiscal_number: 1345749738586, contract: "CDD", company_name: "Zara", status: "étudiant" )
 professional_situation.user = edouard
 professional_situation.save
+
+
+carte_didentite_photo = URI.open('https://res.cloudinary.com/dyyx7p742/image/upload/cdy1riv2yk097udgm7dep6u52i35')
+carte_didentite = Document.new(name: "Carte d'identité", category: "La mif")
+carte_didentite.photo.attach
 
 
 task1 = Task.new(name: "Souscris à une assurance habitation", description: "Tu seras bien content de l'avoir si jamais tu as un dégât des eaux.", done: true, deadline: Date.new(2020, 8, 14), organization: "Luko")
