@@ -2,7 +2,7 @@ class SubtasksController < ApplicationController
   before_action :set_task, only: [:index]
   def index
     @subtasks = @task.subtasks
-    @active_subtask = @subtasks.select{|subtask| !subtask.done}.first
+    @active_subtask = @subtasks.select{|subtask| !Usersubtask.find_by(user:current_user, subtask:subtask).done}.first
   end
 
   # def edit
