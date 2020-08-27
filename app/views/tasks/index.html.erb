@@ -12,6 +12,7 @@
         <div class="line-todo"></div>
       <% end %>
       <div class="task-card">
+        <%= link_to "", task_subtasks_path(task) %>
         <div class="top-card">
           <h2><span class="underline--magical"><%= task.organization %></span></h2>
           <p><%= task.deadline %></p>
