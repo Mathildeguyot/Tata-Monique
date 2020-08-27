@@ -4,8 +4,12 @@
     <div class="owl-task">
       <% if task.done %>
         <i class="fas fa-check" id="done"></i>
+        <div class="line-done <%= "next-to-do" if !task.next_is_done? %>"></div>
+      <% elsif task == @tasks.last %>
+        <i class="fas fa-times" id="todo"></i>
       <% else %>
         <i class="fas fa-times" id="todo"></i>
+        <div class="line-todo"></div>
       <% end %>
       <div class="task-card">
         <div class="top-card">
@@ -18,7 +22,6 @@
       <div class="module-border-wrap">
         <div class="module">
           <%= link_to "", task_subtasks_path(task), class: "fas fa-arrow-right", id: "go"  %>
-          <!-- <i class="fas fa-arrow-right" id="go"></i> -->
         </div>
       </div>
     </div>

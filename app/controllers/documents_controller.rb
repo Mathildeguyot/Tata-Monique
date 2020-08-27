@@ -27,6 +27,10 @@ class DocumentsController < ApplicationController
   def edit
   end
 
+  def show
+    @document = Document.find(params[:id])
+  end
+
   def update
     @document.update(params_document)
     @document.user = current_user
