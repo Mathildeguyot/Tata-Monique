@@ -1,19 +1,35 @@
-<div class="container">
-  <h1>Tous les documents</h1>
-  <div class="docs">
+<div class="container docs">
+  <h1 class="mesdocs text-center"> Mes documents</h1>
+  <div class="docs ">
 
     <% Document::CATEGORIES.each do |category| %>
       <div class="categoryrow">
-        <div class="category-name">
-          <%= category %>
+        <div class="wholeleft">
+          <div class="category-left border-right">
+            <h2><%= category %></h2>
+          </div>
+          <div class="category-right">
+            <% @documents.where(category: category).each do |document| %>
+            <div class="cardinfo border-right">
+              <% if document.photo.attached? && document.photo.previewable? %>
+                <li >
+                  <p> <%= document.name %> </p>
+                  <%= link_to cl_image_path(document.photo.key), target: "_blank" do %>
+                    <%= image_tag document.photo.preview(resize_to_limit: [120, 120]) %>
+                  <% end %>
+                </li>
+                <%= link_to "", document_path(document), method: :delete, data: { confirm: "T'es sah?" }, class: "dedoc far fa-trash-alt" %>
+            </div>
+              <% end %>
+            <% end %>
+          </div>
         </div>
-        <div class="category-docs">
-          <% @documents.where(category: category).each do |document| %>
-          <%= document.name %>
-          <% end %>
+        <div class="wholeright">
+          <%= link_to "", new_document_path, class: "fas fa-folder-plus" %>
         </div>
       </div>
     <% end %>
+
   </div>
 </div>
 

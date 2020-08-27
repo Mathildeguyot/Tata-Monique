@@ -10,10 +10,6 @@ class DocumentsController < ApplicationController
     end
   end
 
-  def show
-    @document = Document.find(params[:id])
-  end
-
   def new
     @document = Document.new
   end
@@ -22,7 +18,7 @@ class DocumentsController < ApplicationController
     @document = Document.new(params_document)
     @document.user = current_user
     if @document.save
-      redirect_to document_path(@document)
+      redirect_to documents_path
     else
       render :new
     end
@@ -43,7 +39,7 @@ class DocumentsController < ApplicationController
 
   def destroy
     @document.destroy
-    redirect_to dashboard_path
+    redirect_to documents_path
   end
 
   private

@@ -22,12 +22,13 @@ gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+#poppler is to display PDF preview
+# gem 'poppler'
+#minimagick needed for PDF
+# gem "mini_magick"
+gem 'image_processing', '~> 1.2'
 
-gem 'cloudinary', '~> 1.12.0'
 
-gem 'dotenv-rails', groups: [:development, :test]
-# Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
 gem 'cloudinary', '~> 1.12.0'
 
 # Reduces boot times through caching; required in config/boot.rb
@@ -39,8 +40,6 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
 
-gem 'dotenv-rails', groups: [:development, :test]
-gem 'cloudinary', '~> 1.12.0'
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'

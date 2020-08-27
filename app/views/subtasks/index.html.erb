@@ -1,0 +1,12 @@
+<div class="container">
+  <h1 id="title">Hop, voilà quelques détails !</h1>
+  <% @subtasks.each do |subtask| %>
+    <div class="owl-task">
+      <div class="task-card">
+        <h3><%= subtask.name %></h3>
+        <p><%= subtask.description %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
+
