@@ -18,8 +18,8 @@
                     <%= image_tag document.photo.preview(resize_to_limit: [120, 120]) %>
                   <% end %>
                 </li>
-                <%= link_to "", document_path(document), method: :delete, data: { confirm: "T'es sah?" }, class: "dedoc far fa-trash-alt" %>
             </div>
+               <%= link_to "", document_path(document), method: :delete, data: { confirm: "T'es sah?" }, class: "dedoc far fa-trash-alt" %>
               <% end %>
             <% end %>
           </div>

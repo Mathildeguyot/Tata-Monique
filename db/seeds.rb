@@ -43,6 +43,25 @@ carte_didentite.photo.attach(io: carte_didentite_photo, filename: 'IDENTITE.pdf'
 carte_didentite.user = edouard
 carte_didentite.save!
 
+# rib_photo = URI.open('https://res.cloudinary.com/dyyx7p742/image/upload/v1598534082/RIB_pgmd6i.pdf')
+# rib = Document.new(name: "RIB", category: "Le boulot")
+# rib.photo.attach(io: rib_photo, filename: 'RIB.pdf')
+# rib.user = edouard
+# rib.save!
+
+contrat_location_photo = URI.open('https://res.cloudinary.com/dyyx7p742/image/upload/v1598534457/contrat_location_thk67w.pdf')
+contrat_location = Document.new(name: "Contrat de location", category: "La casa")
+contrat_location.photo.attach(io: contrat_location_photo, filename: 'contrat_location.pdf')
+contrat_location.user = edouard
+contrat_location.save!
+
+attestation_loyer_photo = URI.open('https://res.cloudinary.com/dyyx7p742/image/upload/v1598534806/attestation_de_loyer_b7zivw.pdf')
+attestation_loyer = Document.new(name: "Attestation de loyer", category: "La casa")
+attestation_loyer.photo.attach(io: attestation_loyer_photo, filename: 'attestation_loyer.pdf')
+attestation_loyer.user = edouard
+attestation_loyer.save!
+
+
 
 task1 = Task.new(name: "Souscris à une assurance habitation", description: "Tu seras bien content de l'avoir si jamais tu as un dégât des eaux.", done: true, deadline: Date.new(2020, 8, 14), organization: "Luko")
 task1.save
