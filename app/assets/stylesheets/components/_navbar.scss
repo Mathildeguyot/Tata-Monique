@@ -1,35 +1,40 @@
 .navbar-lewagon {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   background: linear-gradient(45deg, #7400B8, #6930C3, #5E60CE);
   padding: 0px 25px;
   position: fixed;
   top: 0;
   width: 100%;
   z-index:1;
+  display: flex;
+  justify-content: space-between;
+
 
   .avatar {
     width: 46px;
   }
 }
 
-.logo {
+
+.left {
+  width: 25%;
+  .logo {
   display: flex;
-  h1 {
+   h1 {
     color: white;
     margin-bottom: 0px;
     font-size: 34px;
     padding-top: 12px;
     margin-left: 16px;
   }
-  img {
-    width: 60px;
-    margin-bottom: 0px;
-    position: relative;
-    top: 5px;
+    img {
+      width: 60px;
+      margin-bottom: 0px;
+      position: relative;
+      top: 5px;
+    }
   }
 }
+
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
@@ -51,10 +56,20 @@
     }
 }
 
+.mid {
+display:flex;
+}
+
+.right {
+  display: flex;
+  justify-content: flex-end !important;
+  width: 25%;
+}
+
 .general {
   display: flex;
-  position: fixed;
-  right: 466px;
+  justify-content: center;
+
 }
 
 body {

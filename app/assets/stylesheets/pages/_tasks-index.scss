@@ -18,7 +18,7 @@
   margin-top: 50px;
 }
 
-#done {
+.done {
   color: white;
   background: linear-gradient(45deg, #80FFDB, #64DFDF);
   padding: 20px;
@@ -42,7 +42,7 @@
   background: linear-gradient(45deg, $mid_blue, #80FFDB);
 }
 
-#todo {
+.todo {
   color: white;
   background: linear-gradient(45deg, $deep_purple, $mid_blue);
   padding: 20px 28px;

@@ -1,10 +1,51 @@
-#title {
-  margin-top: 50px;
+.todo.todo-small {
+  font-size: 11.5px;
+  padding: 5px 7px;
+  height: 22.5px;
+  margin-right: 0px;
+  position: relative;
+  bottom: 44px;
+  left: 82px;
+}
+
+.done.done-small {
+  font-size: 11.5px;
+  padding: 5px 7px;
+  height: 22.5px;
+  margin-right: 0px;
+  position: relative;
+  bottom: 44px;
+  left: 82px;
 }
 
 
-.owl-task {
+.chronology {
   display: flex;
-  align-items: center;
-}
+  justify-content: center;
+  margin: 30px 0px;
+  .done-and-line {
+    display: flex;
+    align-items: center;
+    .todo {
+      margin-right: 0px;
+    }
+    .todo.medium-todo {
+      font-size: 23px;
+      padding: 10px 14px;
+      height: 45px;
+      margin-right: 0px;
+    }
+    .done.medium-done {
+      font-size: 23px;
+      padding: 10px 14px;
+      height: 45px;
+      margin-right: 0px;
+    }
 
+    .line-todo-hor {
+      height: 5px;
+      width: 150px;
+      background: linear-gradient(45deg, $mid_blue, $deep_purple);
+    }
+  }
+}
