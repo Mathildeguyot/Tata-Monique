@@ -35,8 +35,6 @@ professional_situation = ProfessionalSituation.new(income: 600, occupation: "ven
 professional_situation.user = edouard
 professional_situation.save
 
-
-
 carte_didentite_photo = URI.open('https://res.cloudinary.com/dyyx7p742/image/upload/ry4yxt77i0d8fr9aj15u2pij90u2')
 carte_didentite = Document.new(name: "Carte d'identité", category: "La mif")
 carte_didentite.photo.attach(io: carte_didentite_photo, filename: 'IDENTITE.pdf')
@@ -60,7 +58,6 @@ attestation_loyer = Document.new(name: "Attestation de loyer", category: "La cas
 attestation_loyer.photo.attach(io: attestation_loyer_photo, filename: 'attestation_loyer.pdf')
 attestation_loyer.user = edouard
 attestation_loyer.save!
-
 
 
 task1 = Task.new(name: "Souscris à une assurance habitation", description: "Tu seras bien content de l'avoir si jamais tu as un dégât des eaux.", done: true, deadline: Date.new(2020, 8, 14), organization: "Luko")
