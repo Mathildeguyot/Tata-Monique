@@ -51,8 +51,7 @@
         <% else %>
           <p><%=subtask.description%></p>
           <% if subtask.subtask_type == "upload" %>
-              <%= subtask.user_subtask(current_user).id %>
-              <%= simple_form_for  subtask.user_subtask(current_user) do |f| %>
+              <%= simple_form_for subtask.user_subtask(current_user) do |f| %>
                 <%= f.simple_fields_for :document do |document| %>
                   <%= document.input :category, collection: Document::CATEGORIES, required: true%>
                   <%= document.input :name, required: true %>
@@ -60,8 +59,6 @@
                 <% end %>
                 <%= f.submit class: "btn btn-primary" %>
               <% end %>
-
-            <p>input</p>
           <% end %>
         <% end %>
       </div>
