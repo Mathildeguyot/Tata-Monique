@@ -53,6 +53,6 @@ class DocumentsController < ApplicationController
   end
 
   def params_document
-    params.require(:document).permit(:category, :name, :photo)
+    params.require(:document).permit(:category, :name, :ref, :photo)
   end
 end

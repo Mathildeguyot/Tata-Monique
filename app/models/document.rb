@@ -6,5 +6,6 @@ class Document < ApplicationRecord
 
   validates :category, presence: true
   validates :name, presence: true
+  validates :ref, presence: true
   validates :category, inclusion: { in: CATEGORIES, message: "%{value} is not included in the list" }
 end
