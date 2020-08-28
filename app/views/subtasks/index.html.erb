@@ -3,9 +3,9 @@
   <div class="chronology">
     <% @subtasks.each do |subtask| %>
       <div class="done-and-line">
-        <% if Usersubtask.find_by(user:current_user, subtask:subtask).done %>
+        <% if subtask.done_by_user?(current_user) %>
           <i class="fas fa-check done medium-done"></i>
-          <div class="line-done-hor <%= "next-to-do" if !Usersubtask.find_by(user:current_user, subtask:subtask).next_is_done? %>"></div>
+          <div class="line-done-hor <%= "next-to-do" if !subtask.next_is_done?(current_user) %>"></div>
         <% elsif subtask == @active_subtask %>
           <i class="fas fa-times todo"></i>
           <div class="line-todo-hor"></div>
@@ -19,6 +19,7 @@
     <% end %>
   </div>
 
+
   <div class="centering">
     <div class="subtask-card">
       <div class="top-card">
@@ -30,6 +31,39 @@
       <p><%= @active_subtask.description %></p>
       <div class="validate">
         <i class="fas fa-check done"></i>
+
+  <% @subtasks.each do |subtask| %>
+    <div class="owl-task">
+      <div class="subtask-card">
+        <div class="top-card">
+          <h3><%= subtask.name %></h3>
+          <div class="corner-right">
+            <p><%= subtask.deadline %></p>
+            <% if subtask.done_by_user?(current_user) %>
+              <i class="fas fa-check done done-small"></i>
+            <% else %>
+              <i class="fas fa-times todo todo-small"></i>
+            <% end %>
+          </div>
+        </div>
+        <% if subtask.done_by_user?(current_user) %>
+          <p>C'est déja fait !</p>
+        <% else %>
+          <p><%=subtask.description%></p>
+          <% if subtask.subtask_type == "upload" %>
+              <%= subtask.user_subtask(current_user).id %>
+              <%= simple_form_for  subtask.user_subtask(current_user) do |f| %>
+                <%= f.simple_fields_for :document do |document| %>
+                  <%= document.input :category, collection: Document::CATEGORIES, required: true%>
+                  <%= document.input :name, required: true %>
+                  <%= document.input :photo, as: :file, required: true %>
+                <% end %>
+                <%= f.submit class: "btn btn-primary" %>
+              <% end %>
+
+            <p>input</p>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </div>
