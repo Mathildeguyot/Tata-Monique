@@ -18,6 +18,6 @@ class UsersubtasksController < ApplicationController
   end
 
   def usersubtask_params
-    params.require(:usersubtask).permit(document: [:category, :name, :photo])
+    params.require(:usersubtask).permit(document: [:category, :name, :ref, :photo])
   end
 end
