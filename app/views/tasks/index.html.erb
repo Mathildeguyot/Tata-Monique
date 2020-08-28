@@ -5,7 +5,7 @@
 
       <% if Usertask.find_by(user:current_user, task:task).done %>
         <i class="fas fa-check done"></i>
-        <div class="line-done <%= "next-to-do" if !Usertask.find_by(user:current_user, task:task).next_is_done? %>"></div>
+        <div class="line-done <%= "next-to-do" if !task.next_is_done?(current_user) %>"></div>
 
       <% elsif task == @tasks.last %>
         <i class="fas fa-times todo"></i>
