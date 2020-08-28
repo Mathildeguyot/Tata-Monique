@@ -3,6 +3,7 @@ class DocumentsController < ApplicationController
   before_action :set_document, only: [:edit, :update, :destroy]
 
   def index
+    @documents = policy_scope(Document)
     if params[:category]
       @documents = Document.where(category: params[:category])
     else

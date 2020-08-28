@@ -36,7 +36,7 @@ professional_situation = ProfessionalSituation.new(income: 600, occupation: "ven
 professional_situation.user = edouard
 professional_situation.save
 
-carte_didentite_photo = URI.open('https://res.cloudinary.com/dyyx7p742/image/upload/v1598534985/joonqvo6l4o5o7zkrpx0lbgx3mhr.pdf')
+carte_didentite_photo = URI.open('https://res.cloudinary.com/dyyx7p742/image/upload/v1598616995/keevz85v0zur7f4ap4cddzfzf42f.pdf')
 carte_didentite = Document.new(name: "Carte d'identité", category: "La mif", ref:'CIN')
 carte_didentite.photo.attach(io: carte_didentite_photo, filename: 'IDENTITE.pdf')
 carte_didentite.user = edouard
