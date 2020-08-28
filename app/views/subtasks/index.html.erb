@@ -31,16 +31,15 @@
       <% else %>
         <p><%=@active_subtask.description%></p>
         <% if @active_subtask.subtask_type == "upload" %>
-            <%= @active_subtask.user_subtask(current_user).id %>
             <%= simple_form_for  @active_subtask.user_subtask(current_user) do |f| %>
               <%= f.simple_fields_for :document do |document| %>
                 <%= document.input :category, collection: Document::CATEGORIES, required: true%>
                 <%= document.input :name, required: true %>
+                <%= document.input :ref, required: true %>
                 <%= document.input :photo, as: :file, required: true %>
               <% end %>
               <%= f.submit class: "btn btn-primary" %>
             <% end %>
-          <p>input</p>
         <% end %>
       <% end %>
       <div class="validate">

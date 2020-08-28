@@ -4,9 +4,13 @@ class UsersubtasksController < ApplicationController
   def update
     document = Document.new(usersubtask_params[:document])
     document.user = @usersubtask.user
-    if document.save
+    # document.name = @usersubtask.subtask(:document_type)
+    # document.category = @usersubtask.subtask(:document_type)
+    if document.save!
+
       @usersubtask.done = true
       @usersubtask.save
+
       redirect_to task_subtasks_path(@usersubtask.subtask.task)
     end
   end
