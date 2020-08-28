@@ -1,6 +1,7 @@
 class SubtasksController < ApplicationController
   before_action :set_task, only: [:index]
   def index
+    @subtasks = policy_scope(Subtask)
     @subtasks = @task.subtasks
     @active_subtask = @subtasks.select{|subtask| !Usersubtask.find_by(user:current_user, subtask:subtask).done}.first
     @just_done_subtask = @subtasks.select{|subtask| Usersubtask.find_by(user:current_user, subtask:subtask).done}.last
