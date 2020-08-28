@@ -2,6 +2,7 @@ class UsersubtasksController < ApplicationController
   before_action :set_usersubtask
 
   def update
+    authorize @usersubtask
     document = Document.new(usersubtask_params[:document])
     document.user = @usersubtask.user
     # document.name = @usersubtask.subtask(:document_type)
@@ -11,7 +12,9 @@ class UsersubtasksController < ApplicationController
       @usersubtask.done = true
       @usersubtask.save
 
+
       redirect_to task_subtasks_path(@usersubtask.subtask.task)
+
     end
   end
 
