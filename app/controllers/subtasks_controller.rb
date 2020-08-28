@@ -5,18 +5,14 @@ class SubtasksController < ApplicationController
     @active_subtask = @subtasks.select{|subtask| !Usersubtask.find_by(user:current_user, subtask:subtask).done}.first
   end
 
-  # def edit
-  # end
+  def edit
+    @subtask = Usersubtask.find_by(user:current_user, subtask:subtask)
+  end
 
-  # def update
-  #   @document = Document.new(params_document)
-  #   @document.user = current_user
-  #   if @document.save
-  #     redirect_to
-  #   else
-  #     render :new
-  #   end
-  # end
+  def update
+    Usersubtask.find_by(user:current_user, subtask:subtask).done = false
+    redirect_to task_subtasks_path
+  end
 
   private
   def task_params
@@ -25,5 +21,9 @@ class SubtasksController < ApplicationController
 
   def set_task
     @task = Task.find(params[:task_id])
+  end
+
+  def subtask_params
+    params.require(:subtask).permit(:name, :description, :deadline, :subtask_type, :document_type)
   end
 end
