@@ -1,8 +1,10 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show]
   def index
+    @tasks = policy_scope(Task)
     @user = current_user
     @tasks = @user.tasks
+
     # @subtasks = Subtask.all
   end
 
@@ -18,5 +20,6 @@ class TasksController < ApplicationController
 
   def set_task
     @task = Task.find(params[:id])
+    authorize @task
   end
 end
