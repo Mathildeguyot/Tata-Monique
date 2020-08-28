@@ -102,6 +102,14 @@ li {
 }
 
 
+.doc.border-right {
+  position: absolute;
+  z-index: 1;
+  height: 20px;
+  left: 40%;
+
+}
+
 .mesdocs {
   margin-top: 20px;
 }
