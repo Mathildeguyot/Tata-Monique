@@ -68,6 +68,7 @@ task1.save
 task2 = Task.new(name: "Change ton adresse postale", description: "Mon Doudou, dès que tu déménages il faut prévenir la poste pour rediriger ton courrier au bon endroit !", deadline: Date.new(2020, 8, 15), organization: "La Poste")
 task2.save
 task3 = Task.new(name:"Fais ta demande d'APL", description:"Tu viens d'emménager, il est temps de faire une demande d'APL, ça va te faire économiser sur ton loyer", deadline: Date.new(2020, 8, 20), organization:"CAF")
+
 task3.save
 task4 = Task.new(name: "Informe ta banque de ton changement d'adresse", description: "Le Crédit Agricole fonctionne par région, je te conseille de changer d'adresse pour éviter de retourner là-bas pour la moindre démarche !",  deadline: Date.new(2020, 8, 20), organization: "Crédit Agricole")
 task4.save
