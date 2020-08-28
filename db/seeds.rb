@@ -37,9 +37,9 @@ professional_situation.user = edouard
 professional_situation.save
 
 
-carte_didentite_photo = URI.open('https://res.cloudinary.com/dyyx7p742/image/upload/v1598619094/r5bqw6w324des7rnobrvmc4seuh1.pdf')
+carte_didentite_photo = URI.open('https://res.cloudinary.com/dyyx7p742/image/upload/v1598618846/IDENTITE_ghztxw.pdf')
+carte_didentite = Document.new(name: "Carte d'identité", category: "La mif")
 
-carte_didentite = Document.new(name: "Carte d'identité", category: "La mif", ref:'CIN')
 carte_didentite.photo.attach(io: carte_didentite_photo, filename: 'IDENTITE.pdf')
 carte_didentite.user = edouard
 carte_didentite.save!
@@ -51,13 +51,13 @@ carte_didentite.save!
 # rib.save!
 
 contrat_location_photo = URI.open('https://res.cloudinary.com/dyyx7p742/image/upload/v1598618882/contrat_location_hxnhjd.pdf')
-contrat_location = Document.new(name: "Contrat de location", category: "La casa", ref: "contrat_loc")
+contrat_location = Document.new(name: "Contrat de location", category: "La casa")
 contrat_location.photo.attach(io: contrat_location_photo, filename: 'contrat_location.pdf')
 contrat_location.user = edouard
 contrat_location.save!
 
 attestation_loyer_photo = URI.open('https://res.cloudinary.com/dyyx7p742/image/upload/v1598618889/attestation_de_loyer_nedr0n.pdf')
-attestation_loyer = Document.new(name: "Attestation de loyer", category: "La casa", ref: "attestation_loyer")
+attestation_loyer = Document.new(name: "Attestation de loyer", category: "La casa")
 attestation_loyer.photo.attach(io: attestation_loyer_photo, filename: 'attestation_loyer.pdf')
 attestation_loyer.user = edouard
 attestation_loyer.save!
