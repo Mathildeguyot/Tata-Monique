@@ -35,7 +35,6 @@
               <%= f.simple_fields_for :document do |document| %>
                 <%= document.input :category, collection: Document::CATEGORIES, required: true%>
                 <%= document.input :name, required: true %>
-                <%= document.input :ref, required: true %>
                 <%= document.input :photo, as: :file, required: true %>
               <% end %>
               <%= f.submit class: "btn btn-primary" %>
