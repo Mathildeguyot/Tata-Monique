@@ -3,6 +3,7 @@ class SubtasksController < ApplicationController
   def index
     @subtasks = @task.subtasks
     @active_subtask = @subtasks.select{|subtask| !Usersubtask.find_by(user:current_user, subtask:subtask).done}.first
+    @just_done_subtask = @subtasks.select{|subtask| Usersubtask.find_by(user:current_user, subtask:subtask).done}.last
   end
 
   # def edit

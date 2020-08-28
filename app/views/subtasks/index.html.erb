@@ -18,22 +18,20 @@
       </div>
     <% end %>
   </div>
-  <% @subtasks.each do |subtask| %>
-    <div class="owl-task">
-      <div class="subtask-card">
-        <div class="top-card">
-          <h3><%= subtask.name %></h3>
-          <div class="corner-right">
-            <p><%= subtask.deadline %></p>
-            <% if Usersubtask.find_by(user:current_user, subtask:subtask).done %>
-              <i class="fas fa-check done done-small"></i>
-            <% else %>
-              <i class="fas fa-times todo todo-small"></i>
-            <% end %>
-          </div>
+
+  <div class="centering">
+    <div class="subtask-card">
+      <div class="top-card">
+        <h3><%= @active_subtask.name %></h3>
+        <div class="corner-right">
+          <p><%= @active_subtask.deadline %></p>
         </div>
-        <p><%= subtask.description %></p>
+      </div>
+      <p><%= @active_subtask.description %></p>
+      <div class="validate">
+        <i class="fas fa-check done"></i>
       </div>
     </div>
-     <% end %>
+  </div>
+
 </div>

@@ -3,7 +3,7 @@
   <% @tasks.each do |task| %>
     <div class="owl-task">
 
-       <% if Usertask.find_by(user:current_user, task:task).done %>
+      <% if Usertask.find_by(user:current_user, task:task).done %>
         <i class="fas fa-check done"></i>
         <div class="line-done <%= "next-to-do" if !Usertask.find_by(user:current_user, task:task).next_is_done? %>"></div>
 
