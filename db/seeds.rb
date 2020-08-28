@@ -36,7 +36,7 @@ professional_situation = ProfessionalSituation.new(income: 600, occupation: "ven
 professional_situation.user = edouard
 professional_situation.save
 
-carte_didentite_photo = URI.open('https://res.cloudinary.com/dyyx7p742/image/upload/v1598616995/keevz85v0zur7f4ap4cddzfzf42f.pdf')
+carte_didentite_photo = URI.open('https://res.cloudinary.com/dyyx7p742/image/upload/v1598619094/r5bqw6w324des7rnobrvmc4seuh1.pdf')
 carte_didentite = Document.new(name: "Carte d'identité", category: "La mif", ref:'CIN')
 carte_didentite.photo.attach(io: carte_didentite_photo, filename: 'IDENTITE.pdf')
 carte_didentite.user = edouard
@@ -84,6 +84,15 @@ end
   Usertask.create(task: task, user: edouard, done:false)
 end
 
+# ASSURANCE HAB
+subtask6= Subtask.new(name:"Upload ta carte d'identité", description:"Luko a besoin de vérifier ton identité",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type: "carte d'identité", task:task1)
+subtask6.save
+Usersubtask.create(subtask: subtask6, user: edouard, done:false)
+
+#LA POSTE
+subtask7= Subtask.new(name:"Upload ta carte d'identité", description:"La Poste a besoin de vérifier ton identité",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type: "carte d'identité", task:task2)
+subtask7.save
+Usersubtask.create(subtask: subtask7, user: edouard, done:false)
 
 # CAF Subtasks
 subtask1 = Subtask.new(name:"Upload ta carte d'identité", description:"La CAF a besoin de vérifier ton identité",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type: "carte d'identité", task:task3)
@@ -103,6 +112,26 @@ Usersubtask.create(subtask: subtask1, user: edouard, done:true)
 [subtask2, subtask3, subtask4, subtask5].each do |subtask|
    Usersubtask.create(subtask: subtask, user: edouard, done:false)
 end
+
+#CREDIT AGRICOLE
+subtask8= Subtask.new(name:"Upload ta carte d'identité", description:"La Poste a besoin de vérifier ton identité",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type: "carte d'identité", task:task4)
+subtask8.save
+Usersubtask.create(subtask: subtask8, user: edouard, done:false)
+
+#AMELI
+subtask9= Subtask.new(name:"Upload ta carte d'identité", description:"La Poste a besoin de vérifier ton identité",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type: "carte d'identité", task:task5)
+subtask9.save
+Usersubtask.create(subtask: subtask9, user: edouard, done:false)
+
+#TATA MONIQUE
+subtask10= Subtask.new(name:"Upload ta carte d'identité", description:"La Poste a besoin de vérifier ton identité",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type: "carte d'identité", task:task6)
+subtask10.save
+Usersubtask.create(subtask: subtask10, user: edouard, done:false)
+
+#IMPOTS.GOUV
+subtask11= Subtask.new(name:"Upload ta carte d'identité", description:"La Poste a besoin de vérifier ton identité",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type: "carte d'identité", task:task7)
+subtask11.save
+Usersubtask.create(subtask: subtask11, user: edouard, done:false)
 
 # Usersubtask.create(subtask: subtask1, user: edouard, done: true)
 
