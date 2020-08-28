@@ -37,7 +37,7 @@ professional_situation.user = edouard
 professional_situation.save
 
 carte_didentite_photo = URI.open('https://res.cloudinary.com/dyyx7p742/image/upload/v1598534985/joonqvo6l4o5o7zkrpx0lbgx3mhr.pdf')
-carte_didentite = Document.new(name: "Carte d'identité", category: "La mif")
+carte_didentite = Document.new(name: "Carte d'identité", category: "La mif", ref:'CIN')
 carte_didentite.photo.attach(io: carte_didentite_photo, filename: 'IDENTITE.pdf')
 carte_didentite.user = edouard
 carte_didentite.save!
@@ -49,13 +49,13 @@ carte_didentite.save!
 # rib.save!
 
 contrat_location_photo = URI.open('https://res.cloudinary.com/dyyx7p742/image/upload/v1598534457/contrat_location_thk67w.pdf')
-contrat_location = Document.new(name: "Contrat de location", category: "La casa")
+contrat_location = Document.new(name: "Contrat de location", category: "La casa", ref: "contrat_loc")
 contrat_location.photo.attach(io: contrat_location_photo, filename: 'contrat_location.pdf')
 contrat_location.user = edouard
 contrat_location.save!
 
 attestation_loyer_photo = URI.open('https://res.cloudinary.com/dyyx7p742/image/upload/v1598534806/attestation_de_loyer_b7zivw.pdf')
-attestation_loyer = Document.new(name: "Attestation de loyer", category: "La casa")
+attestation_loyer = Document.new(name: "Attestation de loyer", category: "La casa", ref: "attestation_loyer")
 attestation_loyer.photo.attach(io: attestation_loyer_photo, filename: 'attestation_loyer.pdf')
 attestation_loyer.user = edouard
 attestation_loyer.save!
@@ -97,7 +97,10 @@ subtask4.save
 subtask5 = Subtask.new(name:"Bientôt fini ! Remplis le questionnaire de la CAF", description:"Rends toi à l'adresse #{"<a href='https://wwwd.caf.fr/wps/portal/caffr/aidesetservices/lesservicesenligne/faireunedemandedeprestation/demanderlaideaulogement'>Website</a>"}, tous les champs seront déja pré-remplis par Tata Monique !", deadline:Date.new(2020, 8, 18), subtask_type: "form", document_type: "CAF-form", task:task3)
 subtask5.save
 
-[subtask1, subtask2, subtask3, subtask4, subtask5].each do |subtask|
+
+Usersubtask.create(subtask: subtask1, user: edouard, done:true)
+
+[subtask2, subtask3, subtask4, subtask5].each do |subtask|
    Usersubtask.create(subtask: subtask, user: edouard, done:false)
 end
 
