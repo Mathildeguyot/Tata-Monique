@@ -43,7 +43,7 @@
     }
     .done.medium-done {
       font-size: 23px;
-      padding: 10px 14px;
+      padding: 10px 10px;
       height: 45px;
       margin-right: 0px;
     }
@@ -53,5 +53,15 @@
       width: 150px;
       background: linear-gradient(45deg, $mid_blue, $deep_purple);
     }
+    .line-done-hor {
+      height: 5px;
+      width: 150px;
+      background: linear-gradient(45deg, #64DFDF, #80FFDB);
+    }
+    .line-done-hor.next-to-do {
+      background: linear-gradient(45deg, #80FFDB, $deep_purple);
+    }
   }
 }
+
+
