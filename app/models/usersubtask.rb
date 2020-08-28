@@ -5,4 +5,5 @@ class Usersubtask < ApplicationRecord
   has_many :documents, through: :users
 
   accepts_nested_attributes_for :documents
+
 end

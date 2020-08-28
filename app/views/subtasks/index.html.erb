@@ -18,6 +18,20 @@
       </div>
     <% end %>
   </div>
+
+
+  <div class="centering">
+    <div class="subtask-card">
+      <div class="top-card">
+        <h3><%= @active_subtask.name %></h3>
+        <div class="corner-right">
+          <p><%= @active_subtask.deadline %></p>
+        </div>
+      </div>
+      <p><%= @active_subtask.description %></p>
+      <div class="validate">
+        <i class="fas fa-check done"></i>
+
   <% @subtasks.each do |subtask| %>
     <div class="owl-task">
       <div class="subtask-card">
@@ -52,5 +66,6 @@
         <% end %>
       </div>
     </div>
-     <% end %>
+  </div>
+
 </div>

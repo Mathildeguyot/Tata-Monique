@@ -25,6 +25,7 @@
   }
 }
 
+
 .subtask-card {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.12);
   width: 600px;
@@ -39,7 +40,6 @@
   .corner-right {
     p {
       font-size: 12px;
-      padding-right: 20px;
     }
   }
   h2 {
@@ -50,5 +50,14 @@
   }
   p {
     font-size: 1rem;
+  }
+  .validate {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    .done {
+      margin-right: 0px;
+      filter: saturate(0);
+    }
   }
 }
