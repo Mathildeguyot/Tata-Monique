@@ -8,17 +8,36 @@
         <div class="line-done <%= "next-to-do" if !task.next_is_done?(current_user) %>"></div>
 
       <% elsif task == @tasks.last %>
-        <i class="fas fa-times todo"></i>
+        <div class="todo-module">
+          <i class="far fa-circle todo"></i>
+        </div>
+
       <% else %>
-        <i class="fas fa-times todo"></i>
+        <div class="todo-module">
+          <i class="far fa-circle todo"></i>
+        </div>
         <div class="line-todo"></div>
       <% end %>
+
       <div class="task-card">
         <%= link_to "", task_subtasks_path(task) %>
+
         <div class="top-card">
           <h2><span class="underline--magical"><%= task.organization %></span></h2>
-          <p><%= task.deadline %></p>
+
+          <% if Usertask.find_by(user:current_user, task:task).done %>
+            <p>C'est fait !</p>
+          <% else %>
+            <% if (task.deadline - Date.today).to_i == 0 %>
+              <p>On se magne, c'est pour aujourd'hui !</p>
+            <% elsif (task.deadline - Date.today).to_i < 0 %>
+              <p>La date limite est dépassé coco !</p>
+            <% else %>
+              <p>Il te reste <%= (task.deadline - Date.today).to_i %> jours pour le faire.</p>
+            <% end %>
+          <% end %>
         </div>
+
         <h3><%= task.name %></h3>
         <p><%= task.description %></p>
       </div>

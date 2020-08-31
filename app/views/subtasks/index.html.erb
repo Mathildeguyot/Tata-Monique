@@ -20,12 +20,10 @@
   </div>
  <div class="centering">
     <div class="subtask-card">
-      <% if @active_subtask %>
-        <div class="top-card">
-          <h3><%= @active_subtask.name %></h3>
-          <div class="corner-right">
-            <p><%= @active_subtask.deadline %></p>
-          </div>
+      <div class="top-card">
+        <h3><%= @active_subtask.name %></h3>
+        <div class="corner-right">
+          <p>Encore <%= (Date.today - @active_subtask.deadline).to_i %> jours pour le faire</p>
         </div>
       <% end %>
       <% if @active_subtask.done_by_user?(current_user) %>
