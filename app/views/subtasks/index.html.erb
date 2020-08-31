@@ -18,26 +18,24 @@
       </div>
     <% end %>
   </div>
- <div class="centering">
+
+
+  <div class="centering">
     <div class="subtask-card">
       <div class="top-card">
         <h3><%= @active_subtask.name %></h3>
         <div class="corner-right">
           <p>Encore <%= (Date.today - @active_subtask.deadline).to_i %> jours pour le faire</p>
         </div>
-      <% end %>
-      <% if @active_subtask.done_by_user?(current_user) %>
-        <p>C'est déja fait !</p>
-      <% else %>
-        <p><%=@active_subtask.description%></p>
-        <% if @active_subtask.subtask_type == "upload" %>
-            <%= simple_form_for  @active_subtask.user_subtask(current_user) do |f| %>
-              <%= f.simple_fields_for :document do |document| %>
-                <%= document.input :photo, as: :file, required: true %>
-              <% end %>
-              <%= f.submit 'Je valide !', class: "btn-validate" %>
+      </div>
+      <p><%=@active_subtask.description%></p>
+      <% if @active_subtask.subtask_type == "upload" %>
+          <%= simple_form_for  @active_subtask.user_subtask(current_user) do |f| %>
+            <%= f.simple_fields_for :document do |document| %>
+              <%= document.input :photo, as: :file, required: true %>
             <% end %>
-        <% end %>
+            <%= f.submit 'Je valide !', class: "btn-validate" %>
+          <% end %>
       <% end %>
       <div class="validate">
         <i class="fas fa-check done"></i>
