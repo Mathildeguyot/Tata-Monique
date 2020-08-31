@@ -21,4 +21,14 @@ class Task < ApplicationRecord
   def user_task(user)
     Usertask.find_by(user: user, task: self)
   end
+
+  def progress(user)
+    total_subtasks = self.subtasks.count.to_f
+    count = 0
+    self.subtasks.each do |subtask|
+      count +=1 if subtask.done_by_user?(user)
+      end
+    total_done = count.to_f
+    percent = (total_done / total_subtasks)*100
+  end
 end
