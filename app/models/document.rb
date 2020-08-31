@@ -1,4 +1,5 @@
 class Document < ApplicationRecord
+  # attr_reader :filename
   belongs_to :user
   has_one_attached :photo
 

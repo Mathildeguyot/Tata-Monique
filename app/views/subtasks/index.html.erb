@@ -35,9 +35,6 @@
         <% if @active_subtask.subtask_type == "upload" %>
             <%= simple_form_for  @active_subtask.user_subtask(current_user) do |f| %>
               <%= f.simple_fields_for :document do |document| %>
-
-<!--                 <%= document.input :category, collection: Document::CATEGORIES, required: true%>
-                <%= document.input :name, required: true %> -->
                 <%= document.input :photo, as: :file, required: true %>
               <% end %>
               <%= f.submit 'Je valide !', class: "btn-validate" %>
@@ -50,3 +47,5 @@
     </div>
   </div>
 </div>
+
+<%= console %>
