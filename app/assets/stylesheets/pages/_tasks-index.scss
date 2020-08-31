@@ -9,6 +9,22 @@
   }
 }
 
+.fait {
+  color: #64DFDF;
+}
+
+.urgent {
+  color: #ec5c2f;
+}
+
+.sur-urgent {
+  color: #f10b69;
+}
+
+.tranquille {
+  color: $blue_purple;
+}
+
 .owl-task {
   display: flex;
   align-items: center;
