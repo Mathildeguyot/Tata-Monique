@@ -10,8 +10,12 @@ class UsersubtasksController < ApplicationController
     authorize @usersubtask
     document = Document.new(usersubtask_params[:document])
     document.user = @usersubtask.user
+    # attributes document name thanks to the subtask
     document.name = @usersubtask.subtask.document_type
-    document.name.scan(/.*(?=\.)/).join
+
+    # extract name of document without .extension
+    document.name = document.name.scan(/.*(?=\.)/).join
+
     if BOULOT_DOCS.include?(document.name)
       document.category = "Le boulot"
     elsif MIF_DOCS.include?(document.name)

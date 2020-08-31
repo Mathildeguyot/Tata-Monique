@@ -56,11 +56,11 @@ contrat_location.photo.attach(io: contrat_location_photo, filename: 'contrat_loc
 contrat_location.user = edouard
 contrat_location.save!
 
-attestation_loyer_photo = URI.open('https://res.cloudinary.com/dyyx7p742/image/upload/v1598618889/attestation_de_loyer_nedr0n.pdf')
-attestation_loyer = Document.new(name: "Attestation de loyer", category: "La casa")
-attestation_loyer.photo.attach(io: attestation_loyer_photo, filename: 'attestation_loyer.pdf')
-attestation_loyer.user = edouard
-attestation_loyer.save!
+# attestation_loyer_photo = URI.open('https://res.cloudinary.com/dyyx7p742/image/upload/v1598618889/attestation_de_loyer_nedr0n.pdf')
+# attestation_loyer = Document.new(name: "Attestation de loyer", category: "La casa")
+# attestation_loyer.photo.attach(io: attestation_loyer_photo, filename: 'attestation_loyer.pdf')
+# attestation_loyer.user = edouard
+# attestation_loyer.save!
 
 
 task1 = Task.new(name: "Souscris à une assurance habitation", description: "Tu seras bien content de l'avoir si jamais tu as un dégât des eaux.", deadline: Date.new(2020, 8, 14), organization: "Luko")
@@ -102,8 +102,8 @@ subtask1 = Subtask.new(name:"Upload ta carte d'identité", description:"La CAF a
 subtask1.save
 subtask2 = Subtask.new(name:"Upload ton RIB", description:"Entre le RIB sur lequel tu veux que les APL soient versés",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type: "RIB.pdf", task:task3)
 subtask2.save
-subtask3 = Subtask.new(name:"Upload ton contrat de location", description:"La CAF a besoin de vérifier que tu es bien locataire",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type: 'contrat_location.pdf', task:task3)
-subtask3.save
+# subtask3 = Subtask.new(name:"Upload ton contrat de location", description:"La CAF a besoin de vérifier que tu es bien locataire",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type: 'contrat_location.pdf', task:task3)
+# subtask3.save
 subtask4 = Subtask.new(name:"Complète ton attestation de loyer", description:"Pour finir, télécharge ton attestation de loyer ici 'https://www.aide-sociale.fr/wp-content/uploads/2018/05/attestation-loyer-apl-21.pdf' et upload là ici", deadline: Date.new(2020, 8, 20), subtask_type: "upload", document_type: 'attestation_loyer.pdf', task:task3)
 subtask4.save
 subtask5 = Subtask.new(name:"Bientôt fini ! Remplis le questionnaire de la CAF", description:"Rends toi à l'adresse #{"<a href='https://wwwd.caf.fr/wps/portal/caffr/aidesetservices/lesservicesenligne/faireunedemandedeprestation/demanderlaideaulogement'>Website</a>"}, tous les champs seront déja pré-remplis par Tata Monique !", deadline:Date.new(2020, 8, 18), subtask_type: "form", document_type: "CAF-form", task:task3)
@@ -112,7 +112,7 @@ subtask5.save
 
 Usersubtask.create(subtask: subtask1, user: edouard, done:true)
 
-[subtask2, subtask3, subtask4, subtask5].each do |subtask|
+[subtask2, subtask4, subtask5].each do |subtask|
    Usersubtask.create(subtask: subtask, user: edouard, done:false)
 end
 
