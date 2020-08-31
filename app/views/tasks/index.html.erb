@@ -18,7 +18,6 @@
         </div>
         <div class="line-todo"></div>
       <% end %>
-
       <div class="task-card">
         <%= link_to "", task_subtasks_path(task) %>
 
@@ -40,6 +39,9 @@
 
         <h3><%= task.name %></h3>
         <p><%= task.description %></p>
+
+        <div class="subtask-timeline" data-percent='<%= task.progress(current_user)%>'>
+        </div>
       </div>
       <div class="module-border-wrap">
         <div class="module">
