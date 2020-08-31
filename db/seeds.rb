@@ -75,7 +75,7 @@ task5 = Task.new(name:"Déclare ton changement de situation à AMELI", descripti
 task5.save
 task6 = Task.new(name: "Dis moi quelle est ta mutuelle", description: "Maintenant que tu joues dans la cour des grands tu as le droit à une mutuelle santé payée par ton travail.",  deadline: Date.new(2020, 9, 15), organization: "Tata Monique")
 task6.save
-task7 = Task.new(name:"Fais ta première déclaration d'impôts", description:"Garde ça dans un coin de ta tête, au mois de juin, tu devras faire ta première déclaration d'impôts !",  deadline: Date.new(2020,6,12), organization:"Impots.gouv")
+task7 = Task.new(name:"Fais ta première déclaration d'impôts", description:"Garde ça dans un coin de ta tête, au mois de juin, tu devras faire ta première déclaration d'impôts !",  deadline: Date.new(2021, 6, 12), organization:"Impots.gouv")
 task7.save
 
 [task1, task2].each do |task|

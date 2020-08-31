@@ -8,15 +8,20 @@
   .top-card {
     display: flex;
     justify-content: space-between;
+    p {
+      font-size: 12px;
+    }
   }
   h2 {
     font-size: 28px;
   }
   h3 {
-    font-size: 24px;
+    font-family: $body-font;
+    font-weight: 600;
+    font-size: 16px;
   }
   p {
-    font-size: 1rem;
+    font-size: 16px;
   }
   transition: border 0.35s ease-in-out;
   &:hover {

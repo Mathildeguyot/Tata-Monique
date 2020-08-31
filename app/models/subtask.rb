@@ -20,4 +20,9 @@ class Subtask < ApplicationRecord
   def user_subtask(user)
     Usersubtask.find_by(user: user, subtask: self)
   end
+
+  def days_from_now(day, month, year)
+    # TODO: return the age expressed in days given the day, month, and year of birth
+    return (Date.new(year, month, day) - Date.today).to_i
+  end
 end
