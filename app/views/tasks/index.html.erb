@@ -26,14 +26,14 @@
           <h2><span class="underline--magical"><%= task.organization %></span></h2>
 
           <% if Usertask.find_by(user:current_user, task:task).done %>
-            <p>C'est fait !</p>
+            <p class="fait">C'est fait !</p>
           <% else %>
             <% if (task.deadline - Date.today).to_i == 0 %>
-              <p>On se magne, c'est pour aujourd'hui !</p>
+              <p class="urgent">On se magne, c'est pour aujourd'hui !</p>
             <% elsif (task.deadline - Date.today).to_i < 0 %>
-              <p>La date limite est dépassé coco !</p>
+              <p class="sur-urgent">La date limite est dépassée coco !</p>
             <% else %>
-              <p>Il te reste <%= (task.deadline - Date.today).to_i %> jours pour le faire.</p>
+              <p class="tranquille">Il te reste <%= (task.deadline - Date.today).to_i %> jours pour le faire.</p>
             <% end %>
           <% end %>
         </div>
