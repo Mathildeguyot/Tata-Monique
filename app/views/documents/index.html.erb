@@ -10,18 +10,22 @@
           </div>
           <div class="category-right">
             <% @documents.where(category: category).each do |document| %>
-            <div class="cardinfo">
-              <% if document.photo.attached? && document.photo.previewable? %>
-                <li >
-                  <div class="doc border-right"></div>
-                  <p> <%= document.name %> </p>
-                  <%= link_to cl_image_path(document.photo.key), target: "_blank" do %>
-                    <%= image_tag document.photo.preview(resize_to_limit: [120, 120]) %>
-                  <% end %>
-                </li>
-            </div>
-               <%= link_to "", document_path(document), method: :delete, data: { confirm: "T'es sah?" }, class: "dedoc far fa-trash-alt" %>
-              <% end %>
+              <div class="cardinfo border-right">
+                <% if document.photo.attached? && document.photo.previewable? %>
+                  <li >
+                    <p><%= document.name %> </p>
+                    <%= link_to cl_image_path(document.photo.key), target: "_blank" do %>
+                      <%= image_tag document.photo.preview(resize_to_limit: [120, 120]) %>
+                    <% end %>
+                  </li>
+                <% end %>
+                <% if document.photo.attached? && !document.photo.previewable? %>
+                  <li>
+                    <p> <%= document.name %></p>
+                    <%= cl_image_tag document.photo.key, width: 120, height:120, crop: :fill %>
+                  </li>
+                <% end %>
+              </div>
             <% end %>
           </div>
         </div>
@@ -34,4 +38,5 @@
   </div>
 </div>
 
+<%= console %>
 

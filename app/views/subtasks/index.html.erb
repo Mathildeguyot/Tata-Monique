@@ -25,7 +25,7 @@
         <div class="corner-right">
           <p>Encore <%= (Date.today - @active_subtask.deadline).to_i %> jours pour le faire</p>
         </div>
-      </div>
+      <% end %>
       <% if @active_subtask.done_by_user?(current_user) %>
         <p>C'est déja fait !</p>
       <% else %>
@@ -33,9 +33,9 @@
         <% if @active_subtask.subtask_type == "upload" %>
             <%= simple_form_for  @active_subtask.user_subtask(current_user) do |f| %>
               <%= f.simple_fields_for :document do |document| %>
-                <%= document.input :category, collection: Document::CATEGORIES, required: true%>
-                <%= document.input :name, required: true %>
-                <%= document.input :ref, required: true %>
+
+<!--                 <%= document.input :category, collection: Document::CATEGORIES, required: true%>
+                <%= document.input :name, required: true %> -->
                 <%= document.input :photo, as: :file, required: true %>
               <% end %>
               <%= f.submit 'Je valide !', class: "btn-validate" %>
