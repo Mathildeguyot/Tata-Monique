@@ -3,20 +3,26 @@ class SubtasksController < ApplicationController
   def index
     @subtasks = policy_scope(Subtask)
     @subtasks = @task.subtasks
-    @active_subtask = @subtasks.select{|subtask| !Usersubtask.find_by(user:current_user, subtask:subtask).done}.first
-    @just_done_subtask = @subtasks.select{|subtask| Usersubtask.find_by(user:current_user, subtask:subtask).done}.last
+    respond_to do |format|
+      format.html
+      format.json { render json: { html: render_to_string(partial: 'subtasks_panel', formats: :html) } }
+    end
+
+    @active_subtask = @subtasks.select { |subtask| !Usersubtask.find_by(user: current_user, subtask: subtask).done }.first
+    @just_done_subtask = @subtasks.select { |subtask| Usersubtask.find_by(user: current_user, subtask: subtask).done }.last
   end
 
   def edit
-    @subtask = Usersubtask.find_by(user:current_user, subtask:subtask)
+    @subtask = Usersubtask.find_by(user: current_user, subtask: subtask)
   end
 
   def update
-    Usersubtask.find_by(user:current_user, subtask:subtask).done = false
+    Usersubtask.find_by(user: current_user, subtask: subtask).done = false
     redirect_to task_subtasks_path
   end
 
   private
+
   def task_params
     params.require(:task).permit(:name, :description, :deadline)
   end
