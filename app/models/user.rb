@@ -22,5 +22,4 @@ class User < ApplicationRecord
   # validates :ID_number, presence: true, format: { with: /\A([0-9]{12})(X|V)\z/ }
   # validates :nationality, presence: true
   # validates :username, presence: true
-
 end

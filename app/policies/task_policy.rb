@@ -11,4 +11,8 @@ class TaskPolicy < ApplicationPolicy
   def show?
     return true
   end
+
+  def fetch_tasks?
+    true
+  end
 end

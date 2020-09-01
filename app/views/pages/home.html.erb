@@ -12,7 +12,7 @@
 
       <div class="home-buttons">
         <%= link_to "Consulter ma To Do", tasks_path, class: "btn btn-col btn-home" %>
-        <%= link_to "Déclarer un changement", root_path, class: "btn btn-col btn-home-light" %>
+        <%= link_to "Déclarer un changement", edit_user_path(current_user), class: "btn btn-col btn-home-light" %>
       </div>
     </div>
 

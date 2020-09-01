@@ -13,6 +13,14 @@ class TasksController < ApplicationController
   #   @subtasks = Subtask.all
   # end
 
+  def fetch_tasks
+    authorize Task.first
+    @category = params[:category]
+    respond_to do |format|
+      format.json { render json: { html: render_to_string(partial: 'list_change', formats: :html, locals: { category: @category }) } }
+    end
+  end
+
   private
 
   def task_params
