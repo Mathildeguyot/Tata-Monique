@@ -16,12 +16,17 @@
   align-items: center;
 }
 
+.img-preview {
+  margin-top: 60px;
+  width: 300px;
+  height: 200px;
+}
+
 .droparea {
   width: 100%;
   height: 300px;
   border: dashed 2px grey;
   border-radius: 5px;
-  opacity: 0.6;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,13 +42,30 @@
 }
 
 
+
 .delete-img-btn {
-  position: absolute;
-  top: 0;
-  right: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  .fa-times {
+    font-size : 40px;
+    display: flex;
+    justify-content: center;
+    margin-left: 40px;
+  }
 }
 
 #manual-input {
   display: flex;
   flex-direction: column;
 }
+
+
+// $purple: #7400B8;
+// $deep_purple: #6930C3;
+// $blue_purple: #5E60CE;
+// $mid_blue: #4EA8DE;
+// $light_blue: #64DFDF;
+// $blue_green: #80FFDB;
+// $light_gray: #F4F4F4;
+// $dark_gray: #6e6d6d;

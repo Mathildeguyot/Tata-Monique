@@ -6,7 +6,6 @@ const previewImageOnFileSelect = () => {
     input.addEventListener('change', () => {
       // we call the displayPreview function (who retrieve the image url and display it)
       displayPreview(input);
-
       // si l'input a au moins photo => je hide le boutton
     })
   }
@@ -15,20 +14,18 @@ const previewImageOnFileSelect = () => {
 const displayPreview = (input) => {
   if (input.files && input.files[0]) {
     const file = input.files[0];
-
-    // const reader = new FileReader();
-    // reader.onload = (event) => {
-    //   document.getElementById('photo-preview').src = event.currentTarget.result;
-    // }
-    // reader.readAsDataURL(input.files[0])
-    // document.getElementById('photo-preview').classList.remove('hidden');
     const photoPreview = document.getElementById("photo-preview")
     let fileType = file.type.split("/");
     if (fileType[1] === "pdf") {
-      photoPreview.innerHTML = `<div style='position: relative;'><embed class='img-preview' src=${URL.createObjectURL(file)} class="animate__animated animate__slideInLeft"><div class='delete-img-btn'>X</div></div>`
+      photoPreview.innerHTML = `<div class="preview-to-delete" style='position: relative;'><embed class='img-preview' src=${URL.createObjectURL(file)} class="animate__animated animate__slideInLeft"><div class='delete-img-btn'> <i class="fas fa-times todo medium-todo"></i> </div></div>`
     } else {
-      photoPreview.innerHTML = `<div style='position: relative;'><img class='img-preview' src=${URL.createObjectURL(file)} class="animate__animated animate__slideInLeft"><div class='delete-img-btn'>X</div></div>`
+      photoPreview.innerHTML = `<div class="preview-to-delete" style='position: relative;'><img class='img-preview' src=${URL.createObjectURL(file)} class="animate__animated animate__slideInLeft"><div class='delete-img-btn'> <i class="fas fa-times todo medium-todo"></i> </div></div>`
     }
+    document.getElementById('manual-input').classList.add('d-none');
+    deletePreview();
+  } else {
+    document.querySelector(".preview-to-delete").remove();
+    document.getElementById('manual-input').classList.remove('d-none');
   }
 }
 
@@ -43,7 +40,6 @@ const initDrop = () => {
     })
     dropArea.addEventListener('drop', (e) => {
       dropArea.classList.remove('active')
-      document.getElementById('manual-input').classList.add('d-none');
       const input = document.querySelector('#photo-input');
       // let existingFiles = input.files;
       const dt = e.dataTransfer;
@@ -71,16 +67,19 @@ const initDrop = () => {
   // dispatch event change sur l'input
   // affiche le bouton manuel
 
-  const deletion = document.querySelector(".delete-img-btn")
-  if (deletion) {
-    deletion.addEventListener('click', (e) => {
-      console.log("hey")
-      input.value = ""
-      input.dispatchEvent(event);
-    });
-  }
 }
-
+  const deletePreview = () => {
+    const deletion = document.querySelector(".delete-img-btn")
+    if (deletion) {
+      deletion.addEventListener('click', (e) => {
+        console.log("hey")
+        const input = document.querySelector('#photo-input');
+        input.value = ""
+        let event = new Event('change');
+        input.dispatchEvent(event);
+      });
+    }
+  }
 
 
 
