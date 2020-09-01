@@ -5,6 +5,7 @@
 .subtasks-list {
   margin-top: 120px;
   padding: 20px 30px;
+  padding-bottom: 40px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.12);
   border: solid 1px white;
   border-radius: 16px;
@@ -26,19 +27,22 @@
       margin-top: 20px;
       margin-bottom: 0px;
     }
+    p {
+      margin-bottom: 2rem;
+    }
   }
   #go-big {
     margin-bottom: 0px;
-    padding-bottom: 0px;
+    padding: 16px 9px;
     background: linear-gradient(45deg, $deep_purple, $mid_blue);
     border-radius: 50%;
     color: white;
     width: 60px;
     height: 60px;
     text-align: center;
-    padding-top: 18px;
     position: relative;
-    left: 87px;
+    left: 90px;
+    text-decoration: none;
   }
     #check-big {
     margin-bottom: 0px;
