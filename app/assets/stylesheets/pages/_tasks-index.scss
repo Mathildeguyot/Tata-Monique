@@ -308,17 +308,37 @@
     left: 10px;
     z-index: 1;
     margin-top: 19px;
-    height: 216px;
+    height: fit-content;
     background-color: white;
-    width: auto;
+        width: 248px;
     padding: 10px;
 
     #go-big {
-      left: 16px;
+      left: 88px;
+      font-size: 10px;
+      padding-bottom: 8px;
     }
 
-    li, h2 {
+    a {
+
+    }
+    h2 {
+      font-size:16px;
+    }
+
+    li {
       font-size:12px;
+    }
+
+    .pourcentage {
+      padding-bottom: 14px;
+      h2 {
+        margin-top:3px
+      }
+      p {
+        font-size:12px;
+        margin-bottom:3px;
+      }
     }
 }
 }
