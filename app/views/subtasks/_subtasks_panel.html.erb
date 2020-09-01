@@ -7,5 +7,9 @@
     <h2>2/5</h2>
     <p>étapes complétées</p>
   </div>
-  <p id="go-big">GO !</p>
+  <% if @task.usertasks %>
+    <p id="go-big">GO !</p>
+  <% else %>
+    <p id="check-big">GO !</p>
+  <% end %>
 </div>

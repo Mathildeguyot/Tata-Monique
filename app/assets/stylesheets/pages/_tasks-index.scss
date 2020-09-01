@@ -30,7 +30,7 @@
   #go-big {
     margin-bottom: 0px;
     padding-bottom: 0px;
-    background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    background: linear-gradient(45deg, $deep_purple, $mid_blue);
     border-radius: 50%;
     color: white;
     width: 60px;
@@ -38,6 +38,20 @@
     text-align: center;
     padding-top: 18px;
     position: relative;
+    left: 87px;
+  }
+    #check-big {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    background: linear-gradient(45deg, #80FFDB, #64DFDF);
+    border-radius: 50%;
+    color: white;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    padding-top: 18px;
+    position: relative;
+    left: 87px;
   }
 }
 
