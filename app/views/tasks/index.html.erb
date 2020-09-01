@@ -18,28 +18,30 @@
         </div>
         <div class="line-todo"></div>
       <% end %>
-      <div class="task-card">
-        <%= link_to "", task_subtasks_path(task) %>
 
-        <div class="top-card">
-          <h2><span class="underline--magical"><%= task.organization %></span></h2>
+      <div class="task-contain">
+        <div class="task-card">
+          <%= link_to "", task_subtasks_path(task) %>
 
-          <% if Usertask.find_by(user:current_user, task:task).done %>
-            <p class="fait">C'est fait !</p>
-          <% else %>
-            <% if (task.deadline - Date.today).to_i == 0 %>
-              <p class="urgent">On se magne, c'est pour aujourd'hui !</p>
-            <% elsif (task.deadline - Date.today).to_i < 0 %>
-              <p class="sur-urgent">La date limite est dépassée coco !</p>
+          <div class="top-card">
+            <h2><span class="underline--magical"><%= task.organization %></span></h2>
+
+            <% if Usertask.find_by(user:current_user, task:task).done %>
+              <p class="fait">C'est fait !</p>
             <% else %>
-              <p class="tranquille">Il te reste <%= (task.deadline - Date.today).to_i %> jours pour le faire.</p>
+              <% if (task.deadline - Date.today).to_i == 0 %>
+                <p class="urgent">On se magne, c'est pour aujourd'hui !</p>
+              <% elsif (task.deadline - Date.today).to_i < 0 %>
+                <p class="sur-urgent">La date limite est dépassée coco !</p>
+              <% else %>
+                <p class="tranquille">Il te reste <%= (task.deadline - Date.today).to_i %> jours pour le faire.</p>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
+
+          <h3><%= task.name %></h3>
+          <p><%= task.description %></p>
         </div>
-
-        <h3><%= task.name %></h3>
-        <p><%= task.description %></p>
-
         <div class="subtask-timeline" data-percent='<%= task.progress(current_user)%>'>
         </div>
       </div>
