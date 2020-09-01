@@ -5,7 +5,7 @@ class Document < ApplicationRecord
 
   CATEGORIES = ["La mif", "Le boulot", "La santé", "La casa"]
 
-  validates :category, presence: true
-  validates :name, presence: true
-  validates :category, inclusion: { in: CATEGORIES, message: "%{value} is not included in the list" }
+    validates :category, presence: true
+    validates :name, presence: true
+    validates :category, inclusion: { in: CATEGORIES, message: "%{value} is not included in the list" }
 end

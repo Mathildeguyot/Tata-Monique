@@ -24,11 +24,14 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import { previewImageOnFileSelect, initDrop } from "../components/photo_preview.js"
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
+  previewImageOnFileSelect();
+  initDrop();
   // Call your functions here, e.g:
   // initSelect2();
 });

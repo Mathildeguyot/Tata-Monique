@@ -32,9 +32,18 @@
       <% if @active_subtask.subtask_type == "upload" %>
           <%= simple_form_for  @active_subtask.user_subtask(current_user) do |f| %>
             <%= f.simple_fields_for :document do |document| %>
-              <%= document.input :photo, as: :file, required: true %>
+            <div class="droparea">
+              <div id="manual-input">
+                <h2 div="faisglisser">Fais glisser un document</h2>
+                <%= document.input :photo, as: :file, required: true, input_html: { class: 'd-none', id: 'photo-input' }, label_html: { class: 'upload-photo'}, label: "Ou cherches-en un" %>
+              </div>
+              <div id="photo-preview">
+              </div>
+            </div>
             <% end %>
-            <%= f.submit 'Je valide !', class: "btn-validate" %>
+            <div class="upload-validation">
+              <%= f.submit 'Je valide !', class: " upload btn-validate" %>
+            </div>
           <% end %>
       <% end %>
       <div class="validate">
