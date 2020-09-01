@@ -16,7 +16,7 @@ ProfessionalSituation.destroy_all
 Document.destroy_all
 User.destroy_all
 
-edouard = User.new(first_name: "Edouard", last_name: "Giroult", birth_date: Date.new(1998, 7, 12), phone_number: "06 21 56 65 45 87", ID_number: "1700569254145", nationality: "française", birth_location: "Lyon", email: "doudou.giroult@gmail.com", password: "tatamonique", username: "Doudou")
+edouard = User.new(first_name: "Edouard", last_name: "Giroult", birth_date: Date.new(1998, 7, 12), zip_code_location:"69001", phone_number: "06 21 56 65 45 87", ID_number: "1700569254145", nationality: "française", birth_location: "Lyon", email: "doudou.giroult@gmail.com", password: "tatamonique", username: "Doudou")
 edouard.save
 
 health = Health.new(ssn: "198076915616754", social_security: "SMENO", health_insurance: "Apicil")
@@ -32,7 +32,7 @@ familial_situation = FamilialSituation.new(children: 0, relationship: "célibata
 familial_situation.user = edouard
 familial_situation.save
 
-professional_situation = ProfessionalSituation.new(income: 600, occupation: "vendeur", fiscal_number: 1345749738586, contract: "CDD", company_name: "Zara", status: "étudiant" )
+professional_situation = ProfessionalSituation.new(income: 600, occupation: "vendeur", fiscal_number: 1345749738586, contract: "CDD", company_name: "Zara", status: "étudiant", iban:"FR9417569000308557721711I12", fiscal_attach: false )
 professional_situation.user = edouard
 professional_situation.save
 
