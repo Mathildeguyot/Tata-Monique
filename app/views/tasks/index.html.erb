@@ -6,7 +6,8 @@
         <div class="owl-task" data-task-id="<%= task.id %>">
           <% if Usertask.find_by(user:current_user, task:task).done %>
             <i class="fas fa-check done"></i>
-            <div class="line-done <%= "next-to-do" if !task.next_is_done?(current_user) %>"></div>
+            <div class="line-done <%= "next-to-do" if !task.next_is_done?(current_user) %>">
+            </div>
           <% elsif task == @tasks.last %>
             <div class="todo-module">
               <i class="far fa-circle todo"></i>
