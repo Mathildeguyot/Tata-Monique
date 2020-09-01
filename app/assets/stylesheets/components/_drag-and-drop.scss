@@ -1,3 +1,4 @@
+
 .upload-photo {
   border: 1px solid #d3d3d3;
   padding: 16px 24px;
@@ -7,8 +8,12 @@
   border-radius: 2px;
   display: flex;
   justify-content: center;
+}
 
-
+.photo-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .droparea {

@@ -27,7 +27,7 @@ const displayPreview = (input) => {
     if (fileType[1] === "pdf") {
       photoPreview.innerHTML = `<div style='position: relative;'><embed class='img-preview' src=${URL.createObjectURL(file)} class="animate__animated animate__slideInLeft"><div class='delete-img-btn'>X</div></div>`
     } else {
-      photoPreview.innerHTML = `<img class='img-preview' src=${URL.createObjectURL(file)} class="animate__animated animate__slideInLeft">`
+      photoPreview.innerHTML = `<div style='position: relative;'><img class='img-preview' src=${URL.createObjectURL(file)} class="animate__animated animate__slideInLeft"><div class='delete-img-btn'>X</div></div>`
     }
   }
 }
@@ -66,13 +66,22 @@ const initDrop = () => {
       dropArea.classList.remove('active')
     });
   };
-
-
   // event listener 'click' sur le delete img btn
   // imput.value = ''
   // dispatch event change sur l'input
   // affiche le bouton manuel
 
+  const deletion = document.querySelector(".delete-img-btn")
+  if (deletion) {
+    deletion.addEventListener('click', (e) => {
+      console.log("hey")
+      input.value = ""
+      input.dispatchEvent(event);
+    });
+  }
 }
+
+
+
 
 export { previewImageOnFileSelect, initDrop };
