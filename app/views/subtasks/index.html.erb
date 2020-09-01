@@ -7,7 +7,9 @@
           <i class="fas fa-check done medium-done"></i>
           <div class="line-done-hor <%= "next-to-do" if !subtask.next_is_done?(current_user) %>"></div>
         <% elsif subtask == @active_subtask %>
-          <i class="fas fa-times todo"></i>
+          <div class="todo-module">
+            <i class="far fa-circle todo"></i>
+          </div>
           <div class="line-todo-hor"></div>
         <% elsif subtask == @subtasks.last %>
           <i class="fas fa-times todo medium-todo"></i>

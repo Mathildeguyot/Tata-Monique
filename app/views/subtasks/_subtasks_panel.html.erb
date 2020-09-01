@@ -1,0 +1,11 @@
+<div class="subtasks-list">
+  <h2><%= @task.organization %></h2>
+  <% @subtasks.each do |subtask| %>
+    <li><%= subtask.name %></li>
+  <% end %>
+  <div class="pourcentage">
+    <h2>2/5</h2>
+    <p>étapes complétées</p>
+  </div>
+  <p id="go-big">GO !</p>
+</div>
