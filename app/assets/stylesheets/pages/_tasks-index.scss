@@ -233,5 +233,96 @@
    }
   }
 
+// media queries //
+
+//small devices
+@media (max-width: 767px) {
+  .gauche {
+        width: 359px;
+  }
+
+  #title {
+    margin-top:55px;
+  }
+
+  .owl-task {
+
+    .done {
+      font-size: 25px;
+      height: 64px;
+      margin-right: 20px;
+    }
+
+    .todo {
+      font-size: 65px;
+      height: 77px;
+    }
+
+
+    .todo-module {
+          height: 64px;
+    }
+
+    .line-done {
+      position: relative;
+      right: 55px;
+      top: 106px;
+    }
+
+    .line-todo {
+      height: 212px;
+    position: relative;
+    right: 63px;
+    top: 135px;
+    }
+
+    .top-card {
+       .tranquille {
+          font-size: 10px;
+        text-align: right !important;
+      }
+    }
+    .task-card {
+      padding:20px 12px 0 10px;
+
+      h3 {
+        font-size:12px;
+      }
+
+      p {
+        font-size:10px;
+      }
+
+      h2 {
+        font-size:20px;
+        margin-right: 16px;
+      }
+
+    }
+
+  }
+
+  .subtasks-list {
+    position: fixed;
+    top: 167px;
+    left: 10px;
+    z-index: 1;
+    margin-top: 19px;
+    height: 216px;
+    background-color: white;
+    width: auto;
+    padding: 10px;
+
+    #go-big {
+      left: 16px;
+    }
+
+    li, h2 {
+      font-size:12px;
+    }
+}
+}
+
+
 
 

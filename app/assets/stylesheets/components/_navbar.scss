@@ -75,3 +75,19 @@ display:flex;
 body {
   padding-top: 70px;
 }
+
+// media queries //
+
+//small devices
+@media (max-width: 812px) {
+  .navbar-nav {
+    font-size:11px;
+  }
+  .right {
+        justify-content: flex-start !important;
+  }
+  .navbar-light .navbar-nav .active > .nav-link {
+    color: white;
+    margin: 0px 12px;
+  }
+}

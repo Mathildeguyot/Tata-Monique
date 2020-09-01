@@ -24,7 +24,7 @@ health.user = edouard
 health.save
 
 
-habitation = Habitation.new(number: 80, street: "Rue Lafayette", zip_code: "75010", city: "Paris", category: "Locataire", rent: 780, size: 22, lease_start_date: Date.new(2020, 8, 15), furnished: true)
+habitation = Habitation.new(number: 80, street: "Rue Lafayette", zip_code: "75009", city: "Paris", category: "Locataire", rent: 780, size: 22, lease_start_date: Date.new(2020, 8, 15), furnished: true)
 habitation.user = edouard
 habitation.save
 
@@ -67,12 +67,12 @@ task1 = Task.new(name: "Souscris à une assurance habitation", description: "Tu 
 task1.save
 task2 = Task.new(name: "Change ton adresse postale", description: "Mon Doudou, dès que tu déménages il faut prévenir la poste pour rediriger ton courrier au bon endroit !", deadline: Date.new(2020, 8, 15), organization: "La Poste")
 task2.save
-task3 = Task.new(name:"Fais ta demande d'APL", description:"Tu viens d'emménager, il est temps de faire une demande d'APL, ça va te faire économiser sur ton loyer", deadline: Date.new(2020, 9, 8), organization:"CAF")
+task3 = Task.new(name:"Fais ta demande d'APL", description:"Tu viens d'emménager, il est temps de faire une demande d'APL, ça va te faire économiser sur ton loyer.", deadline: Date.new(2020, 9, 8), organization:"CAF")
 
 task3.save
 task4 = Task.new(name: "Informe ta banque de ton changement d'adresse", description: "Le Crédit Agricole fonctionne par région, je te conseille de changer d'adresse pour éviter de retourner là-bas pour la moindre démarche !",  deadline: Date.new(2020, 9, 9), organization: "Crédit Agricole")
 task4.save
-task5 = Task.new(name:"Déclare ton changement de situation à AMELI", description:"Doudou, tu entres dans la vie active, donc tu n'as plus droit à la Sécu étudiante, tu dois donc informer l'assurance maladie Ameli de ta nouvelle situation", deadline: Date.new(2020,9,15), organization:"Ameli")
+task5 = Task.new(name:"Déclare ton changement de situation à AMELI", description:"Doudou, tu entres dans la vie active, donc tu n'as plus droit à la Sécu étudiante, tu dois donc informer l'assurance maladie Ameli de ta nouvelle situation.", deadline: Date.new(2020,9,15), organization:"Ameli")
 task5.save
 task6 = Task.new(name: "Dis moi quelle est ta mutuelle", description: "Maintenant que tu joues dans la cour des grands tu as le droit à une mutuelle santé payée par ton travail.",  deadline: Date.new(2020, 9, 15), organization: "Tata Monique")
 task6.save
