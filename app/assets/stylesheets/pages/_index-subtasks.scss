@@ -72,4 +72,50 @@
   }
 }
 
+// media queries //
+
+//small devices
+@media (max-width: 767px) {
+
+  .chronology {
+    display:none;
+}
+  h1 {
+    font-size:1.5rem;
+  }
+
+  .top-card {
+    h3 {
+      font-size:1rem;
+    }
+
+  }
+  .subtask-card {
+    p {
+      font-size:0.7rem;
+    }
+  }
+  #manual-input h2 {
+    font-size:1rem;
+  }
+
+  .upload-photo{
+    font-size: 10px;
+  }
+
+  .droparea {
+    height:180px;
+  }
+
+  .done {
+    font-size: 21px;
+    height: 61px;
+  }
+
+  .validate {
+    padding-bottom:0
+  }
+}
+
+
 
