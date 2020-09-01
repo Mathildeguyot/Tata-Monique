@@ -90,12 +90,12 @@ end
 # ASSURANCE HAB
 subtask6= Subtask.new(name:"Upload ta carte d'identité", description:"Luko a besoin de vérifier ton identité",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type: "IDENTITE.pdf", task:task1)
 subtask6.save
-Usersubtask.create(subtask: subtask6, user: edouard, done:false)
+Usersubtask.create(subtask: subtask6, user: edouard, done:true)
 
 #LA POSTE
 subtask7= Subtask.new(name:"Upload ta carte d'identité", description:"La Poste a besoin de vérifier ton identité",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type: 'IDENTITE.pdf', task:task2)
 subtask7.save
-Usersubtask.create(subtask: subtask7, user: edouard, done:false)
+Usersubtask.create(subtask: subtask7, user: edouard, done:true)
 
 # CAF Subtasks
 subtask1 = Subtask.new(name:"Upload ta carte d'identité", description:"La CAF a besoin de vérifier ton identité",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type: 'IDENTITE.pdf', task:task3)
@@ -104,9 +104,10 @@ subtask2 = Subtask.new(name:"Upload ton RIB", description:"Entre le RIB sur lequ
 subtask2.save
 # subtask3 = Subtask.new(name:"Upload ton contrat de location", description:"La CAF a besoin de vérifier que tu es bien locataire",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type: 'contrat_location.pdf', task:task3)
 # subtask3.save
-subtask4 = Subtask.new(name:"Complète ton attestation de loyer", description:"Pour finir, télécharge ton attestation de loyer ici 'https://www.aide-sociale.fr/wp-content/uploads/2018/05/attestation-loyer-apl-21.pdf' et upload là ici", deadline: Date.new(2020, 8, 20), subtask_type: "upload", document_type: 'attestation_loyer.pdf', task:task3)
+
+subtask4 = Subtask.new(name:"Complète ton attestation de loyer", description:"Télécharge ton attestation de loyer #{"<a href='https://www.aide-sociale.fr/wp-content/uploads/2018/05/attestation-loyer-apl-21.pdf'>ici</a>"}, et upload-la", deadline: Date.new(2020, 8, 20), subtask_type: "upload", document_type: 'attestation_loyer.pdf', task:task3)
 subtask4.save
-subtask5 = Subtask.new(name:"Bientôt fini ! Remplis le questionnaire de la CAF", description:"Rends toi à l'adresse #{"<a href='https://wwwd.caf.fr/wps/portal/caffr/aidesetservices/lesservicesenligne/faireunedemandedeprestation/demanderlaideaulogement'>Website</a>"}, tous les champs seront déja pré-remplis par Tata Monique !", deadline:Date.new(2020, 8, 18), subtask_type: "form", document_type: "CAF-form", task:task3)
+subtask5 = Subtask.new(name:"Bientôt fini ! Remplis le questionnaire de la CAF", description:"Rends toi #{"<a href='https://wwwd.caf.fr/wps/portal/caffr/aidesetservices/lesservicesenligne/faireunedemandedeprestation/demanderlaideaulogement'>ici</a>"}, tous les champs seront déja pré-remplis par Tata Monique !", deadline:Date.new(2020, 8, 18), subtask_type: "form", document_type: "CAF-form", task:task3)
 subtask5.save
 
 

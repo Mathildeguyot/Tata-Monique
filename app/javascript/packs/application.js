@@ -25,13 +25,18 @@ require("channels")
 // External imports
 import "bootstrap";
 // Internal imports, e.g:
+
 import { toggleSubtasksPanel } from '../components/toggle_subtasks_panel';
+
+// import { initSelect2 } from '../components/init_select2';
+import {timelineSubtasks} from '../components/timeline_subtask'
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   toggleSubtasksPanel();
-
+  timelineSubtasks();
 });
 
 

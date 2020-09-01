@@ -179,6 +179,7 @@
   }
 }
 
+
 #go {
   background: -webkit-linear-gradient(120deg, #80FFDB 0%, #5E60CE 100%);
   -webkit-background-clip: text;
@@ -194,3 +195,12 @@
     // transition: all 1s ease-in;
   }
 }
+
+.subtask-timeline {
+    height: 5px;
+    background-image: linear-gradient(120deg,#5E60CE 0%, #80FFDB 100%);
+    padding:0px !important
+}
+
+
+

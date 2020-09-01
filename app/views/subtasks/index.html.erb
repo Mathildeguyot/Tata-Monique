@@ -30,7 +30,7 @@
           <p>Encore <%= (Date.today - @active_subtask.deadline).to_i %> jours pour le faire</p>
         </div>
       </div>
-      <p><%=@active_subtask.description%></p>
+      <p><%=@active_subtask.description.html_safe%></p>
       <% if @active_subtask.subtask_type == "upload" %>
           <%= simple_form_for  @active_subtask.user_subtask(current_user) do |f| %>
             <%= f.simple_fields_for :document do |document| %>
@@ -44,5 +44,4 @@
       </div>
     </div>
   </div>
-
 </div>
