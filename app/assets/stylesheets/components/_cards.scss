@@ -19,10 +19,11 @@
   p {
     font-size: 16px;
   }
+
   transition: border 0.35s ease-in-out;
   &:hover {
-    border: solid 1px $deep-purple;
-    transition: border 0.35s ease-in-out;
+    // border: solid 1px $deep-purple;
+    // transition: border 0.35s ease-in-out;
   }
 }
 

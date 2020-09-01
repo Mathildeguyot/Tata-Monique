@@ -1,6 +1,15 @@
 .centering {
   display: flex;
   justify-content: center;
+  .subtask-card {
+    p a {
+      color:white;
+      text-decoration:none;
+      background:-webkit-linear-gradient(120deg, #80FFDB 0%, #5E60CE 100%);
+      padding:3px;
+      border-radius: 4px;
+    }
+  }
 }
 
 
