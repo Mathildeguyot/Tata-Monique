@@ -1,57 +1,55 @@
 <div class="container">
-  <h1 id="title">Ma to do</h1>
-  <% @tasks.each do |task| %>
-    <div class="owl-task">
-
-      <% if Usertask.find_by(user:current_user, task:task).done %>
-        <i class="fas fa-check done"></i>
-        <div class="line-done <%= "next-to-do" if !task.next_is_done?(current_user) %>"></div>
-
-      <% elsif task == @tasks.last %>
-        <div class="todo-module">
-          <i class="far fa-circle todo"></i>
-        </div>
-
-      <% else %>
-        <div class="todo-module">
-          <i class="far fa-circle todo"></i>
-        </div>
-        <div class="line-todo"></div>
-      <% end %>
-
-      <div class="task-contain">
-        <div class="task-card">
-          <%= link_to "", task_subtasks_path(task) %>
-
-          <div class="top-card">
-            <h2><span class="underline--magical"><%= task.organization %></span></h2>
-
-            <% if Usertask.find_by(user:current_user, task:task).done %>
-              <p class="fait">C'est fait !</p>
-            <% else %>
-              <% if (task.deadline - Date.today).to_i == 0 %>
-                <p class="urgent">On se magne, c'est pour aujourd'hui !</p>
-              <% elsif (task.deadline - Date.today).to_i < 0 %>
-                <p class="sur-urgent">La date limite est dépassée coco !</p>
-              <% else %>
-                <p class="tranquille">Il te reste <%= (task.deadline - Date.today).to_i %> jours pour le faire.</p>
-              <% end %>
-            <% end %>
+  <div class="global">
+    <div class="gauche">
+      <h1 id="title">Ma to do</h1>
+      <% @tasks.each do |task| %>
+        <div class="owl-task" data-task-id="<%= task.id %>">
+          <% if Usertask.find_by(user:current_user, task:task).done %>
+            <i class="fas fa-check done"></i>
+            <div class="line-done <%= "next-to-do" if !task.next_is_done?(current_user) %>"></div>
+          <% elsif task == @tasks.last %>
+            <div class="todo-module">
+              <i class="far fa-circle todo"></i>
+            </div>
+          <% else %>
+            <div class="todo-module">
+              <i class="far fa-circle todo"></i>
+            </div>
+            <div class="line-todo"></div>
+          <% end %>
+          
+          <div class="task-contain">
+            <div class="task-card">
+              <%= link_to "", task_subtasks_path(task) %>
+              <div class="top-card">
+                <h2><span class="underline--magical"><%= task.organization %></span></h2>
+                <% if Usertask.find_by(user:current_user, task:task).done %>
+                  <p class="fait">C'est fait !</p>
+                <% else %>
+                  <% if (task.deadline - Date.today).to_i == 0 %>
+                    <p class="urgent">On se magne, c'est pour aujourd'hui !</p>
+                  <% elsif (task.deadline - Date.today).to_i < 0 %>
+                    <p class="sur-urgent">La date limite est dépassée coco !</p>
+                  <% else %>
+                    <p class="tranquille">Il te reste <%= (task.deadline - Date.today).to_i %> jours pour le faire.</p>
+                  <% end %>
+                <% end %>
+              </div>
+              
+              <h3><%= task.name %></h3>
+              <p><%= task.description %></p>
+            </div>
+            <div class="subtask-timeline" data-percent='<%= task.progress(current_user)%>'>
           </div>
 
-          <h3><%= task.name %></h3>
-          <p><%= task.description %></p>
+          <div class="module-border-wrap">
+            <div class="module">
+              <i class="fas fa-arrow-right" id="go"></i>
+            </div>
+          </div>
         </div>
-        <div class="subtask-timeline" data-percent='<%= task.progress(current_user)%>'>
-        </div>
-      </div>
-      <div class="module-border-wrap">
-        <div class="module">
-          <%= link_to "", task_subtasks_path(task), class: "fas fa-arrow-right", id: "go"  %>
-        </div>
-      </div>
+      <% end %>
     </div>
-  <% end %>
+    <div id="subtasks-panel"></div>
+  </div>
 </div>
-
-
