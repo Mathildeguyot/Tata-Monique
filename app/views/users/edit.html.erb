@@ -58,11 +58,11 @@
       <%= simple_form_for [ @user, @habitation ] do |f| %>
         <p>Quelle est ta nouvelle adresse Doudou ?</p>
         <div class="d-flex">
-          <%= f.input :number, id: "numero" %>
+          <%= f.input :number, id: "numero"%>
           <%= f.input :street %>
         </div>
         <div class="d-flex">
-          <%= f.input :city %>
+          <%= f.input :city  %>
           <%= f.input :zip_code %>
         </div>
         <%= f.input :category %>
