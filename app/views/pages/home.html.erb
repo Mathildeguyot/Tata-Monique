@@ -10,10 +10,12 @@
         <p>Pas de panique ! <span id="home-tata-monique">Tata Monique</span> t'accompagne dans <strong class="description-underline">toutes tes démarches administratives !</strong></p>
       </div>
 
-      <div class="home-buttons">
-        <%= link_to "Consulter ma To Do", tasks_path, class: "btn btn-col btn-home" %>
-        <%= link_to "Déclarer un changement", edit_user_path(current_user), class: "btn btn-col btn-home-light" %>
-      </div>
+      <% if current_user %>
+        <div class="home-buttons">
+          <%= link_to "Consulter ma To Do", tasks_path, class: "btn btn-col btn-home" %>
+          <%= link_to "Déclarer un changement", edit_user_path(current_user), class: "btn btn-col btn-home-light" %>
+        </div>
+      <% end %>
     </div>
 
     <div class="col-7 p-0">
