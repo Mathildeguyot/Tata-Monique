@@ -22,6 +22,17 @@ en:
         size: 'Taille du logement en m2'
         lease_start_date: 'Quand emménages-tu ?'
         furnished: 'Logement meublé'
+      placeholders:
+        habitation:
+          number: ''
+          street: ''
+          city: ''
+          zip_code: ''
+          category: ''
+          rent: ''
+          size: ''
+          lease_start_date: ''
+          furnished: ''
   #   user:
   #     new:
   #       email: 'E-mail to sign in.'
