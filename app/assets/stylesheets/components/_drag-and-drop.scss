@@ -17,9 +17,10 @@
 }
 
 .img-preview {
-  margin-top: 60px;
+  margin-top: 40px;
   width: 300px;
   height: 200px;
+  object-fit: cover;
 }
 
 .droparea {
@@ -47,12 +48,11 @@
   cursor: pointer;
   display: flex;
   justify-content: center;
-  .fa-times {
-    font-size : 40px;
-    display: flex;
-    justify-content: center;
-    margin-left: 40px;
-  }
+  color: #7400B8;
+  font-size: 30px;
+  position: relative;
+  left: 235px;
+  bottom: 15px;
 }
 
 #manual-input {
