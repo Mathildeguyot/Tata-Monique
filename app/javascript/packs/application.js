@@ -34,6 +34,8 @@ import { toggleSubtasksPanel } from '../components/toggle_subtasks_panel';
 import {timelineSubtasks} from '../components/timeline_subtask'
 import {listChange} from '../components/list_change.js'
 import {situationForm} from '../components/situation_form.js'
+import { validateTask } from '../components/validate_task.js';
+
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -45,6 +47,7 @@ document.addEventListener('turbolinks:load', () => {
   timelineSubtasks();
   listChange();
   situationForm();
+  validateTask();
 });
 
 
