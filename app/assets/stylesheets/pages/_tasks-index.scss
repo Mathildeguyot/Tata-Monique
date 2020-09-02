@@ -53,10 +53,15 @@
     width: 60px;
     height: 60px;
     text-align: center;
-    padding-top: 18px;
+    padding-top: 4px;
+    padding-left: 9px;
     position: relative;
     left: 87px;
   }
+}
+
+.grise {
+  color: rgba(0, 0, 0, 0.4);
 }
 
 .top-card .underline--magical {
