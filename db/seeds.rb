@@ -77,7 +77,6 @@ task6.save
 task7 = Task.new(name:"Fais ta première déclaration d'impôts", description:"Garde ça dans un coin de ta tête, au mois de juin, tu devras faire ta première déclaration d'impôts !",  deadline: Date.new(2021, 6, 12), organization:"Impots.gouv")
 task7.save
 
-
 [task1,task2, task3, task4, task5, task6, task7].each do |task|
   Usertask.create(task: task, user: edouard, done:false)
 end
