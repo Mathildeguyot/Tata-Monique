@@ -24,7 +24,7 @@ health.user = edouard
 health.save
 
 
-habitation = Habitation.new(number: 80, street: "Rue Lafayette", zip_code: "75009", city: "Paris", category: "Locataire", rent: 780, size: 22, lease_start_date: Date.new(2020, 8, 15), furnished: true)
+habitation = Habitation.new(number: 20, street: "rue de Condé", zip_code: "69002", city: "Lyon", category: "Locataire", rent: 780, size: 22, lease_start_date: Date.new(2020, 8, 15), furnished: true)
 habitation.user = edouard
 habitation.save
 
@@ -37,12 +37,12 @@ professional_situation.user = edouard
 professional_situation.save
 
 
-carte_didentite_photo = URI.open('https://res.cloudinary.com/dyyx7p742/image/upload/v1598618846/IDENTITE_ghztxw.pdf')
-carte_didentite = Document.new(name: "Carte d'identité", category: "La mif")
+# carte_didentite_photo = URI.open('https://res.cloudinary.com/dyyx7p742/image/upload/v1598618846/IDENTITE_ghztxw.pdf')
+# carte_didentite = Document.new(name: "Carte d'identité", category: "La mif")
 
-carte_didentite.photo.attach(io: carte_didentite_photo, filename: 'IDENTITE.pdf')
-carte_didentite.user = edouard
-carte_didentite.save!
+# carte_didentite.photo.attach(io: carte_didentite_photo, filename: 'IDENTITE.pdf')
+# carte_didentite.user = edouard
+# carte_didentite.save!
 
 # rib_photo = URI.open('https://res.cloudinary.com/dyyx7p742/image/upload/v1598534082/RIB_pgmd6i.pdf')
 # rib = Document.new(name: "RIB", category: "Le boulot")
@@ -50,11 +50,11 @@ carte_didentite.save!
 # rib.user = edouard
 # rib.save!
 
-contrat_location_photo = URI.open('https://res.cloudinary.com/dyyx7p742/image/upload/v1598618882/contrat_location_hxnhjd.pdf')
-contrat_location = Document.new(name: "Contrat de location", category: "La casa")
-contrat_location.photo.attach(io: contrat_location_photo, filename: 'contrat_location.pdf')
-contrat_location.user = edouard
-contrat_location.save!
+# contrat_location_photo = URI.open('https://res.cloudinary.com/dyyx7p742/image/upload/v1598618882/contrat_location_hxnhjd.pdf')
+# contrat_location = Document.new(name: "Contrat de location", category: "La casa")
+# contrat_location.photo.attach(io: contrat_location_photo, filename: 'contrat_location.pdf')
+# contrat_location.user = edouard
+# contrat_location.save!
 
 # attestation_loyer_photo = URI.open('https://res.cloudinary.com/dyyx7p742/image/upload/v1598618889/attestation_de_loyer_nedr0n.pdf')
 # attestation_loyer = Document.new(name: "Attestation de loyer", category: "La casa")
@@ -86,12 +86,12 @@ subtask1 = Subtask.new(name:"Upload ta carte d'identité", description:"La CAF a
 subtask1.save
 subtask2 = Subtask.new(name:"Upload ton RIB", description:"Entre le RIB sur lequel tu veux que les APL soient versées.",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type: "RIB.pdf", task:task1)
 subtask2.save
-subtask3 = Subtask.new(name:"Complète ton attestation de loyer", description:"Télécharge ton attestation de loyer #{"<a href='https://www.aide-sociale.fr/wp-content/uploads/2018/05/attestation-loyer-apl-21.pdf'>juste ici</a>"}, et upload-la ci-dessous.", deadline: Date.new(2020, 8, 20), subtask_type: "upload", document_type: 'attestation_loyer.pdf', task:task1)
+subtask3 = Subtask.new(name:"Complète ton attestation de loyer", description:"Télécharge ton attestation de loyer #{"<a href='https://www.aide-sociale.fr/wp-content/uploads/2018/05/attestation-loyer-apl-21.pdf'>juste ici</a>"}, et upload-la ci-dessous.", deadline: Date.new(2020, 8, 20), subtask_type: "upload", document_type: 'AttestationLoyer.pdf', task:task1)
 subtask3.save
 subtask4 = Subtask.new(name:"Bientôt fini ! Remplis le questionnaire de la CAF", description:"Rends toi #{"<a href='https://wwwd.caf.fr/wps/portal/caffr/aidesetservices/lesservicesenligne/faireunedemandedeprestation/demanderlaideaulogement'>ici</a>"}, tous les champs seront déja pré-remplis par Tata Monique !", deadline:Date.new(2020, 8, 18), subtask_type: "form", document_type: "CAF-form", task:task1)
 subtask4.save
 
-Usersubtask.create(subtask: subtask1, user: edouard, done:true)
+Usersubtask.create(subtask: subtask1, user: edouard, done:false)
 
 [subtask2, subtask3, subtask4].each do |subtask|
    Usersubtask.create(subtask: subtask, user: edouard, done:false)
