@@ -136,6 +136,4 @@ Usersubtask.create(subtask: subtask10, user: edouard, done:false)
 #   subtask.save
 # end
 
-# # Assurance habitation Subtasks
-# subtask6 = Subtask.new(name:"", description:, done:, deadline:)
 
