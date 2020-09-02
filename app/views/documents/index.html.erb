@@ -26,6 +26,7 @@
                   </li>
                 <% end %>
               </div>
+              <%= link_to "", document_path(document), method: :delete, data: { confirm: "T'es sah?" }, class: "dedoc far fa-trash-alt" %>
             <% end %>
           </div>
         </div>
