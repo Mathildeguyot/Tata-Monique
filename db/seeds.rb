@@ -62,13 +62,13 @@ contrat_location.save!
 # attestation_loyer.user = edouard
 # attestation_loyer.save!
 
-task1 = Task.new(name:"Fais ta demande d'APL", description:"Tu viens d'emménager, il est temps de faire une demande d'APL, ça va te faire économiser sur ton loyer.", deadline: Date.new(2020, 9, 8), organization:"CAF")
+task1 = Task.new(name:"Fais ta demande d'APL", description:"Tu viens d'emménager, il est temps de faire une demande d'APL, ça va te faire économiser sur ton loyer.", deadline: Date.new(2020, 9, 10), organization:"CAF")
 task1.save
-task2 = Task.new(name: "Souscris à une assurance habitation", description: "Tu seras bien content de l'avoir si jamais tu as un dégât des eaux.", deadline: Date.new(2020, 9, 8), organization: "Luko")
+task2 = Task.new(name: "Souscris à une assurance habitation", description: "Tu seras bien content de l'avoir si jamais tu as un dégât des eaux.", deadline: Date.new(2020, 9, 11), organization: "Luko")
 task2.save
-task3 = Task.new(name: "Change ton adresse postale", description: "Mon Doudou, dès que tu déménages il faut prévenir la poste pour rediriger ton courrier au bon endroit !", deadline: Date.new(2020, 9, 8), organization: "La Poste")
+task3 = Task.new(name: "Change ton adresse postale", description: "Mon Doudou, dès que tu déménages il faut prévenir la poste pour rediriger ton courrier au bon endroit !", deadline: Date.new(2020, 9, 11), organization: "La Poste")
 task3.save
-task4 = Task.new(name: "Informe ta banque de ton changement d'adresse", description: "Le Crédit Agricole fonctionne par région, je te conseille de changer d'adresse pour éviter de retourner là-bas pour la moindre démarche !",  deadline: Date.new(2020, 9, 9), organization: "Crédit Agricole")
+task4 = Task.new(name: "Informe ta banque de ton changement d'adresse", description: "Le Crédit Agricole fonctionne par région, je te conseille de changer d'adresse pour éviter de retourner là-bas pour la moindre démarche !",  deadline: Date.new(2020, 9, 13), organization: "Crédit Agricole")
 task4.save
 task5 = Task.new(name:"Déclare ton changement de situation à AMELI", description:"Doudou, tu entres dans la vie active, donc tu n'as plus droit à la Sécu étudiante, tu dois donc informer l'assurance maladie Ameli de ta nouvelle situation.", deadline: Date.new(2020,9,15), organization:"Ameli")
 task5.save
@@ -77,60 +77,55 @@ task6.save
 task7 = Task.new(name:"Fais ta première déclaration d'impôts", description:"Garde ça dans un coin de ta tête, au mois de juin, tu devras faire ta première déclaration d'impôts !",  deadline: Date.new(2021, 6, 12), organization:"Impots.gouv")
 task7.save
 
-
-[task1, task2, task3, task4, task5, task6, task7].each do |task|
+[task1,task2, task3, task4, task5, task6, task7].each do |task|
   Usertask.create(task: task, user: edouard, done:false)
 end
 
-# ASSURANCE HAB
-subtask6= Subtask.new(name:"Upload ta carte d'identité", description:"Luko a besoin de vérifier ton identité.",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type: "IDENTITE.pdf", task:task1)
-subtask6.save
-Usersubtask.create(subtask: subtask6, user: edouard, done:true)
-
-#LA POSTE
-subtask7= Subtask.new(name:"Upload ta carte d'identité", description:"La Poste a besoin de vérifier ton identité.",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type: 'IDENTITE.pdf', task:task2)
-subtask7.save
-Usersubtask.create(subtask: subtask7, user: edouard, done:true)
-
 # CAF Subtasks
-subtask1 = Subtask.new(name:"Upload ta carte d'identité", description:"La CAF a besoin de vérifier ton identité.",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type: 'IDENTITE.pdf', task:task3)
+subtask1 = Subtask.new(name:"Upload ta carte d'identité", description:"La CAF a besoin de vérifier ton identité.",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type: 'IDENTITE.pdf', task:task1)
 subtask1.save
-subtask2 = Subtask.new(name:"Upload ton RIB", description:"Entre le RIB sur lequel tu veux que les APL soient versées.",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type: "RIB.pdf", task:task3)
+subtask2 = Subtask.new(name:"Upload ton RIB", description:"Entre le RIB sur lequel tu veux que les APL soient versées.",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type: "RIB.pdf", task:task1)
 subtask2.save
-# subtask3 = Subtask.new(name:"Upload ton contrat de location", description:"La CAF a besoin de vérifier que tu es bien locataire",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type: 'contrat_location.pdf', task:task3)
-# subtask3.save
-
-subtask4 = Subtask.new(name:"Complète ton attestation de loyer", description:"Télécharge ton attestation de loyer #{"<a href='https://www.aide-sociale.fr/wp-content/uploads/2018/05/attestation-loyer-apl-21.pdf'>juste ici</a>"}, et upload-la ci-dessous.", deadline: Date.new(2020, 8, 20), subtask_type: "upload", document_type: 'attestation_loyer.pdf', task:task3)
+subtask3 = Subtask.new(name:"Complète ton attestation de loyer", description:"Télécharge ton attestation de loyer #{"<a href='https://www.aide-sociale.fr/wp-content/uploads/2018/05/attestation-loyer-apl-21.pdf'>juste ici</a>"}, et upload-la ci-dessous.", deadline: Date.new(2020, 8, 20), subtask_type: "upload", document_type: 'attestation_loyer.pdf', task:task1)
+subtask3.save
+subtask4 = Subtask.new(name:"Bientôt fini ! Remplis le questionnaire de la CAF", description:"Rends toi #{"<a href='https://wwwd.caf.fr/wps/portal/caffr/aidesetservices/lesservicesenligne/faireunedemandedeprestation/demanderlaideaulogement'>ici</a>"}, tous les champs seront déja pré-remplis par Tata Monique !", deadline:Date.new(2020, 8, 18), subtask_type: "form", document_type: "CAF-form", task:task1)
 subtask4.save
-subtask5 = Subtask.new(name:"Bientôt fini ! Remplis le questionnaire de la CAF", description:"Rends toi #{"<a href='https://wwwd.caf.fr/wps/portal/caffr/aidesetservices/lesservicesenligne/faireunedemandedeprestation/demanderlaideaulogement'>ici</a>"}, tous les champs seront déja pré-remplis par Tata Monique !", deadline:Date.new(2020, 8, 18), subtask_type: "form", document_type: "CAF-form", task:task3)
-subtask5.save
-
 
 Usersubtask.create(subtask: subtask1, user: edouard, done:true)
 
-[subtask2, subtask4, subtask5].each do |subtask|
+[subtask2, subtask3, subtask4].each do |subtask|
    Usersubtask.create(subtask: subtask, user: edouard, done:false)
 end
 
+# ASSURANCE HAB
+subtask5 = Subtask.new(name:"Upload ta carte d'identité", description:"Luko a besoin de vérifier ton identité.",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type: "IDENTITE.pdf", task:task2)
+subtask5.save
+Usersubtask.create(subtask: subtask5, user: edouard, done:false)
+
+#LA POSTE
+subtask6 = Subtask.new(name:"Upload ta carte d'identité", description:"La Poste a besoin de vérifier ton identité.",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type: 'IDENTITE.pdf', task:task3)
+subtask6.save
+Usersubtask.create(subtask: subtask6, user: edouard, done:false)
+
 #CREDIT AGRICOLE
-subtask8= Subtask.new(name:"Upload ta carte d'identité", description:"Le Crédit Agricole a besoin de vérifier ton identité",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type: "IDENTITE.pdf", task:task4)
+subtask7 = Subtask.new(name:"Upload ta carte d'identité", description:"Le Crédit Agricole a besoin de vérifier ton identité",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type: "IDENTITE.pdf", task:task4)
+subtask7.save
+Usersubtask.create(subtask: subtask7, user: edouard, done:false)
+
+#AMELI
+subtask8 = Subtask.new(name:"Upload ta carte d'identité", description:"AMELI a besoin de vérifier ton identité",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type: 'IDENTITE.pdf', task:task5)
 subtask8.save
 Usersubtask.create(subtask: subtask8, user: edouard, done:false)
 
-#AMELI
-subtask9= Subtask.new(name:"Upload ta carte d'identité", description:"AMELI a besoin de vérifier ton identité",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type: 'IDENTITE.pdf', task:task5)
+#TATA MONIQUE
+subtask9= Subtask.new(name:"Upload ta carte d'identité", description:"Histoire qu'on trouve ta mutuelle !",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type:'IDENTITE.pdf', task:task6)
 subtask9.save
 Usersubtask.create(subtask: subtask9, user: edouard, done:false)
 
-#TATA MONIQUE
-subtask10= Subtask.new(name:"Upload ta carte d'identité", description:"Histoire qu'on trouve ta mutuelle !",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type:'IDENTITE.pdf', task:task6)
+#IMPOTS.GOUV
+subtask10= Subtask.new(name:"Upload ta carte d'identité", description:"Les impôts ont besoin de vérifier ton identité",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type:'IDENTITE.pdf', task:task7)
 subtask10.save
 Usersubtask.create(subtask: subtask10, user: edouard, done:false)
-
-#IMPOTS.GOUV
-subtask11= Subtask.new(name:"Upload ta carte d'identité", description:"Les impôts ont besoin de vérifier ton identité",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type:'IDENTITE.pdf', task:task7)
-subtask11.save
-Usersubtask.create(subtask: subtask11, user: edouard, done:false)
 
 # Usersubtask.create(subtask: subtask1, user: edouard, done: true)
 
