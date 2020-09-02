@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :subtasks, only: [:index, :edit, :update]
    end
   resources :usersubtasks, only: [:update]
+  resources :usertasks, only: [:update]
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do

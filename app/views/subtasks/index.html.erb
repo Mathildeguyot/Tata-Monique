@@ -46,7 +46,7 @@
       </div>
       <p><%=@active_subtask.description.html_safe%></p>
       <% if @active_subtask.subtask_type == "upload" %>
-          <%= simple_form_for  @active_subtask.user_subtask(current_user) do |f| %>
+          <%= simple_form_for @active_subtask.user_subtask(current_user) do |f| %>
             <%= f.simple_fields_for :document do |document| %>
             <div class="droparea">
               <div id="manual-input">
@@ -62,6 +62,12 @@
             </div>
           <% end %>
       <% end %>
+      <% if @active_subtask == @subtasks.last%>
+         <%= simple_form_for @active_subtask.user_subtask(current_user)  do |f| %>
+          <%= f.submit 'Je valide !', class: " upload btn-validate"  %>
+          <% end %>
+      <% end %>
+
     </div>
   </div>
 </div>
