@@ -88,7 +88,7 @@ subtask2 = Subtask.new(name:"Upload ton RIB", description:"Entre le RIB sur lequ
 subtask2.save
 subtask3 = Subtask.new(name:"Complète ton attestation de loyer", description:"Télécharge ton attestation de loyer #{"<a href='https://www.aide-sociale.fr/wp-content/uploads/2018/05/attestation-loyer-apl-21.pdf'>juste ici</a>"}, et upload-la ci-dessous.", deadline: Date.new(2020, 9, 9), subtask_type: "upload", document_type: 'AttestationLoyer.pdf', task:task1)
 subtask3.save
-subtask4 = Subtask.new(name:"Bientôt fini ! Remplis le questionnaire de la CAF", description:"Rends toi #{"<a href='https://wwwd.caf.fr/wps/portal/caffr/aidesetservices/lesservicesenligne/faireunedemandedeprestation/demanderlaideaulogement'>ici</a>"}, tous les champs seront déja pré-remplis par Tata Monique !", deadline:Date.new(2020, 9, 9), subtask_type: "form", document_type: "CAF-form", task:task1)
+subtask4 = Subtask.new(name:"Bientôt fini ! Remplis le questionnaire de la CAF", description:"Rends toi #{"<a href='https://wwwd.caf.fr/wps/portal/caffr/aidesetservices/lesservicesenligne/faireunedemandedeprestation/demanderlaideaulogementexperimentation/!ut/p/a0#/acces' target='_blank'>ici</a>"}, tous les champs seront déja pré-remplis par Tata Monique !", deadline:Date.new(2020, 9, 9), subtask_type: "form", document_type: "CAF-form", task:task1)
 subtask4.save
 
 Usersubtask.create(subtask: subtask1, user: edouard, done:false)
