@@ -54,7 +54,24 @@
 
 
     <div class="situation-form invisible">
-      <p>ouais ouais ouais</p>
+      <h3>Nouvel appart pour une nouvelle vie !</h3>
+      <%= simple_form_for [ @user, @habitation ] do |f| %>
+        <p>Quelle est ta nouvelle adresse Doudou ?</p>
+        <div class="d-flex">
+          <%= f.input :number, id: "numero" %>
+          <%= f.input :street %>
+        </div>
+        <div class="d-flex">
+          <%= f.input :city %>
+          <%= f.input :zip_code %>
+        </div>
+        <%= f.input :category %>
+        <%= f.input :rent %>
+        <%= f.input :size %>
+        <%= f.input :lease_start_date %>
+        <%= f.input :furnished %>
+        <%= f.submit "Je valide ma nouvelle adresse", class: "btn-validate" %>
+      <% end %>
     </div>
   </div>
 </div>

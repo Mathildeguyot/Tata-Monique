@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html
     end
+    @habitation = @user.habitation
   end
 
   def update

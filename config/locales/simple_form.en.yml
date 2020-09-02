@@ -11,14 +11,22 @@ en:
     error_notification:
       default_message: "Please review the problems below:"
     # Examples
-    # labels:
-    #   defaults:
-    #     password: 'Password'
-    #   user:
-    #     new:
-    #       email: 'E-mail to sign in.'
-    #     edit:
-    #       email: 'E-mail.'
+    labels:
+      habitation:
+        number: 'Numéro'
+        street: 'Libellé et nom de la voie'
+        city: 'Ville'
+        zip_code: 'Code postal'
+        category: 'Choisis une catégorie dans la liste ci-dessous :'
+        rent: 'La question qui fait mal, combien tu vas raquer ?'
+        size: 'Taille du logement en m2'
+        lease_start_date: 'Quand emménages-tu ?'
+        furnished: 'Logement meublé'
+  #   user:
+  #     new:
+  #       email: 'E-mail to sign in.'
+  #     edit:
+  #       email: 'E-mail.'
     # hints:
     #   defaults:
     #     username: 'User name to sign in.'
