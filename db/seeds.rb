@@ -62,13 +62,11 @@ contrat_location.save!
 # attestation_loyer.user = edouard
 # attestation_loyer.save!
 
-
-task1 = Task.new(name: "Souscris à une assurance habitation", description: "Tu seras bien content de l'avoir si jamais tu as un dégât des eaux.", deadline: Date.new(2020, 8, 14), organization: "Luko")
+task1 = Task.new(name:"Fais ta demande d'APL", description:"Tu viens d'emménager, il est temps de faire une demande d'APL, ça va te faire économiser sur ton loyer.", deadline: Date.new(2020, 9, 8), organization:"CAF")
 task1.save
-task2 = Task.new(name: "Change ton adresse postale", description: "Mon Doudou, dès que tu déménages il faut prévenir la poste pour rediriger ton courrier au bon endroit !", deadline: Date.new(2020, 8, 15), organization: "La Poste")
+task2 = Task.new(name: "Souscris à une assurance habitation", description: "Tu seras bien content de l'avoir si jamais tu as un dégât des eaux.", deadline: Date.new(2020, 9, 8), organization: "Luko")
 task2.save
-task3 = Task.new(name:"Fais ta demande d'APL", description:"Tu viens d'emménager, il est temps de faire une demande d'APL, ça va te faire économiser sur ton loyer.", deadline: Date.new(2020, 9, 8), organization:"CAF")
-
+task3 = Task.new(name: "Change ton adresse postale", description: "Mon Doudou, dès que tu déménages il faut prévenir la poste pour rediriger ton courrier au bon endroit !", deadline: Date.new(2020, 9, 8), organization: "La Poste")
 task3.save
 task4 = Task.new(name: "Informe ta banque de ton changement d'adresse", description: "Le Crédit Agricole fonctionne par région, je te conseille de changer d'adresse pour éviter de retourner là-bas pour la moindre démarche !",  deadline: Date.new(2020, 9, 9), organization: "Crédit Agricole")
 task4.save
@@ -79,11 +77,8 @@ task6.save
 task7 = Task.new(name:"Fais ta première déclaration d'impôts", description:"Garde ça dans un coin de ta tête, au mois de juin, tu devras faire ta première déclaration d'impôts !",  deadline: Date.new(2021, 6, 12), organization:"Impots.gouv")
 task7.save
 
-[task1, task2].each do |task|
-  Usertask.create(task: task, user: edouard, done:true)
-end
 
-[task3, task4, task5, task6, task7].each do |task|
+[task1, task2, task3, task4, task5, task6, task7].each do |task|
   Usertask.create(task: task, user: edouard, done:false)
 end
 
