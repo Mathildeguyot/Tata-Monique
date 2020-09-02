@@ -6,15 +6,19 @@
         <% if subtask.done_by_user?(current_user) %>
           <i class="fas fa-check done medium-done"></i>
           <div class="line-done-hor <%= "next-to-do" if !subtask.next_is_done?(current_user) %>"></div>
+        <% elsif subtask == @active_subtask && subtask == @subtasks.last %>
+          <div class="todo-module">
+            <i class="far fa-circle todo"></i>
+          </div>
         <% elsif subtask == @active_subtask %>
           <div class="todo-module">
             <i class="far fa-circle todo"></i>
           </div>
           <div class="line-todo-hor"></div>
         <% elsif subtask == @subtasks.last %>
-          <i class="fas fa-times todo medium-todo"></i>
+          <i class="far fa-circle todo medium-todo"></i>
         <% else %>
-          <i class="fas fa-times todo medium-todo"></i>
+          <i class="far fa-circle todo medium-todo"></i>
           <div class="line-todo-hor"></div>
         <% end %>
       </div>
@@ -27,7 +31,17 @@
       <div class="top-card">
         <h3><%= @active_subtask.name %></h3>
         <div class="corner-right">
-          <p>Encore <%= (Date.today - @active_subtask.deadline).to_i %> jours pour le faire</p>
+          <% if @active_subtask.done_by_user?(current_user) %>
+            <p class="fait">C'est fait !</p>
+          <% else %>
+            <% if (@active_subtask.deadline - Date.today).to_i == 0 %>
+              <p class="urgent">On se magne, c'est pour aujourd'hui !</p>
+            <% elsif (@active_subtask.deadline - Date.today).to_i < 0 %>
+              <p class="sur-urgent">La date limite est dépassée coco !</p>
+            <% else %>
+              <p class="tranquille">Il te reste <%= (@active_subtask.deadline - Date.today).to_i %> jours pour le faire.</p>
+            <% end %>
+          <% end %>
         </div>
       </div>
       <p><%=@active_subtask.description.html_safe%></p>
@@ -48,9 +62,6 @@
             </div>
           <% end %>
       <% end %>
-      <div class="validate">
-        <i class="fas fa-check done"></i>
-      </div>
     </div>
   </div>
 </div>
