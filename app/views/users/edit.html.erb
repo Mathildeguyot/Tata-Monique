@@ -55,9 +55,9 @@
 
       <div class="situation-form invisible">
         <h3>Nouvel appart pour une nouvelle vie !</h3>
-        <div class="new-change-form custom-scrollbar custom-rose-scrollbar">
-          <div class="flou-top"></div>
-          <%= simple_form_for [ @user, @habitation ] do |f| %>
+        <%= simple_form_for [ @user, @habitation ] do |f| %>
+          <div class="new-change-form custom-scrollbar custom-rose-scrollbar">
+            <div class="flou-top"></div>
             <p>Quelle est ta nouvelle adresse Doudou ?</p>
             <div class="d-flex">
               <%= f.input :number, id: "numero"%>
