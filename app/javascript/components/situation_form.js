@@ -4,7 +4,10 @@ const situationForm = () => {
     console.log(event);
     if (event.target.matches("#go")) {
       console.log("#go");
-      situationForm.classList.remove("invisible");
+      if (situationForm) {
+        situationForm.classList.remove("invisible");
+
+      }
     }
 
   });

@@ -35,6 +35,7 @@ import {timelineSubtasks} from '../components/timeline_subtask'
 import {listChange} from '../components/list_change.js'
 import {situationForm} from '../components/situation_form.js'
 import { validateTask } from '../components/validate_task.js';
+import { disableEnter } from '../components/disable_enter.js';
 
 
 
@@ -48,6 +49,7 @@ document.addEventListener('turbolinks:load', () => {
   listChange();
   situationForm();
   validateTask();
+  disableEnter();
 });
 
 
