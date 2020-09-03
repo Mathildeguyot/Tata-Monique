@@ -16,7 +16,7 @@ ProfessionalSituation.destroy_all
 Document.destroy_all
 User.destroy_all
 
-edouard = User.new(first_name: "Edouard", last_name: "Giroult", birth_date: Date.new(1998, 7, 12), zip_code_location:"69001", phone_number: "06 21 56 65 45 87", ID_number: "1700569254145", nationality: "française", birth_location: "Lyon", email: "doudou.giroult@gmail.com", password: "tatamonique", username: "Doudou")
+edouard = User.new(first_name: "Edouard", last_name: "Giroult", birth_date: Date.new(1998, 7, 12), zip_code_location:"69001", phone_number: "06 21 56 65 45 87", ID_number: "1700569254145", nationality: "française", birth_location: "Lyon", email: "doudou.giroult69@gmail.com", password: "tatamonique", username: "Doudou")
 edouard.save
 
 health = Health.new(ssn: "198076915616754", social_security: "SMENO", health_insurance: "Apicil")
@@ -24,7 +24,7 @@ health.user = edouard
 health.save
 
 
-habitation = Habitation.new(number: 20, street: "rue de Condé", zip_code: "69002", city: "Lyon", category: "Locataire", rent: 780, size: 22, lease_start_date: Date.new(2020, 8, 15), furnished: true)
+habitation = Habitation.new(number: 80, street: "rue Lafayette", zip_code: "75009", city: "Paris", category: "Locataire", rent: 880, size: 22, lease_start_date: Date.new(2020, 9, 11), furnished: true)
 habitation.user = edouard
 habitation.save
 

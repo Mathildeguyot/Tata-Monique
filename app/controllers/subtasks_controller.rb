@@ -1,6 +1,18 @@
+require 'json'
+require 'open-uri'
+
 class SubtasksController < ApplicationController
   before_action :set_task, only: [:index]
   def index
+
+    @user = current_user
+
+    url = "http://localhost:3000/api/v1/users/#{@user.id}/usersubtasks/#{Usersubtask.all.order(:id)[3].id}"
+
+    usersubtask_serialized = open(url).read
+    usersubtask = Usersubtask.find(Usersubtask.all.order(:id)[3].id)
+    usersubtask.done = JSON.parse(usersubtask_serialized)["done"]
+
     @subtasks = policy_scope(Subtask)
     @subtasks = @task.subtasks
     respond_to do |format|
