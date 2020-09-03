@@ -66,12 +66,6 @@
             </div>
           <% end %>
       <% end %>
-      <% if @active_subtask == @subtasks.last%>
-        <%= simple_form_for @active_subtask.user_subtask(current_user)  do |f| %>
-          <%= f.submit 'Je valide !', class: " upload btn-validate"  %>
-        <% end %>
-      <% end %>
-
     </div>
   </div>
 </div>
