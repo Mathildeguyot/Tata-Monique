@@ -43,7 +43,14 @@
     position: relative;
     left: 90px;
     text-decoration: none;
+    opacity: 0.9;
+    transition: opacity 0.5s ease-in-out;
+    &:hover {
+      opacity: 1;
+      background: linear-gradient(65deg, $deep_purple, $mid_blue);
+    }
   }
+
     #check-big {
     margin-bottom: 0px;
     padding-bottom: 0px;
