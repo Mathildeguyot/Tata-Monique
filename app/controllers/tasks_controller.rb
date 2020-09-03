@@ -9,7 +9,7 @@ class TasksController < ApplicationController
 
     @user = current_user
 
-    url = "https://tatamonique.live/api/v1/users/#{@user.id}/usersubtasks/#{Usersubtask.all.order(:id)[3].id}"
+    url = "https://www.tatamonique.live/api/v1/users/#{@user.id}/usersubtasks/#{Usersubtask.all.order(:id)[3].id}"
 
     usersubtask_serialized = open(url).read
     usersubtask = Usersubtask.find(Usersubtask.all.order(:id)[3].id)
