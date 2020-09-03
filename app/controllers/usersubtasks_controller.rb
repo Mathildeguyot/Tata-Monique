@@ -8,10 +8,10 @@ class UsersubtasksController < ApplicationController
 
   def update
     authorize @usersubtask
-    if @usersubtask.subtask == @usersubtask.subtask.task.subtasks.last
-      @usersubtask.subtask.task.usertasks.first.update(done:true)
-      redirect_to tasks_path
-    else
+    # if @usersubtask.subtask == @usersubtask.subtask.task.subtasks.last
+    #   @usersubtask.subtask.task.usertasks.first.update(done:true)
+    #   redirect_to tasks_path
+    # else
       document = Document.new(usersubtask_params[:document])
       document.user = @usersubtask.user
       # attributes document name thanks to the subtask
@@ -36,7 +36,7 @@ class UsersubtasksController < ApplicationController
         redirect_to task_subtasks_path(@usersubtask.subtask.task)
       end
 
-    end
+    # end
   end
 
   private
