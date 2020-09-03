@@ -9,9 +9,7 @@ class UsersubtasksController < ApplicationController
   def update
     authorize @usersubtask
     if @usersubtask.subtask == @usersubtask.subtask.task.subtasks.last
-      @usersubtask.done = true
       @usersubtask.subtask.task.usertasks.first.update(done:true)
-      @usersubtask.save
       redirect_to tasks_path
     else
       document = Document.new(usersubtask_params[:document])
