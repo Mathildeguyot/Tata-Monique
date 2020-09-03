@@ -1,15 +1,15 @@
 <div class="subtasks-list">
   <h2><%= @task.organization %></h2>
   <% @subtasks.each do |subtask| %>
-    <li><%= subtask.name %></li>
+    <li class="<%= "grise" if subtask.usersubtasks.first.done %>"><%= subtask.name %></li>
   <% end %>
   <div class="pourcentage">
     <h2><%= @task.progress(current_user).round %>%</h2>
     <p>étapes complétées</p>
   </div>
-  <% if @task.usertasks %>
+  <% if @task.usertasks.first.done == false %>
     <%= link_to "GO !", task_subtasks_path(@task), id: "go-big"  %>
   <% else %>
-    <p id="check-big">GO !</p>
+    <i class="fas fa-check done" id="check-big"></i>
   <% end %>
 </div>

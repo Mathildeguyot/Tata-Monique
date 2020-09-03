@@ -3,7 +3,7 @@ class TasksController < ApplicationController
   def index
     @tasks = policy_scope(Task)
     @user = current_user
-    @tasks = @user.tasks
+    @tasks = @user.tasks.order(:id)
     @active_task = @tasks.select { |task| !Usertask.find_by(user: current_user, task: task).done }.first
 
     # @subtasks = Subtask.all

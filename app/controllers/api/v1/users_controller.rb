@@ -7,6 +7,7 @@ class Api::V1::UsersController < Api::V1::BaseController
   end
 
   def show
+    # response.headers["Access-Control-Allow-Origin"] = "*"
   end
 
   def update

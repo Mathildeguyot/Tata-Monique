@@ -1,6 +1,5 @@
 class Habitation < ApplicationRecord
   belongs_to :user
-
   validates :number, numericality: { only_integer: true }
   validates :street, presence: true
   validates :city, presence: true

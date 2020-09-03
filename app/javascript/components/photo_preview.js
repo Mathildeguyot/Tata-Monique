@@ -17,9 +17,9 @@ const displayPreview = (input) => {
     const photoPreview = document.getElementById("photo-preview")
     let fileType = file.type.split("/");
     if (fileType[1] === "pdf") {
-      photoPreview.innerHTML = `<div class="preview-to-delete" style='position: relative;'><embed class='img-preview' src=${URL.createObjectURL(file)} class="animate__animated animate__slideInLeft"><div class='delete-img-btn'> <i class="fas fa-times todo medium-todo"></i> </div></div>`
+      photoPreview.innerHTML = `<div class="preview-to-delete" style='position: relative;'><embed class='img-preview' src=${URL.createObjectURL(file)} class="animate__animated animate__slideInLeft"><div class='delete-img-btn'> <i class="far fa-trash-alt"></i> </div></div>`
     } else {
-      photoPreview.innerHTML = `<div class="preview-to-delete" style='position: relative;'><img class='img-preview' src=${URL.createObjectURL(file)} class="animate__animated animate__slideInLeft"><div class='delete-img-btn'> <i class="fas fa-times todo medium-todo"></i> </div></div>`
+      photoPreview.innerHTML = `<div class="preview-to-delete" style='position: relative;'><img class='img-preview' src=${URL.createObjectURL(file)} class="animate__animated animate__slideInLeft"><div class='delete-img-btn'> <i class="far fa-trash-alt"></i> </div></div>`
     }
     document.getElementById('manual-input').classList.add('d-none');
     deletePreview();

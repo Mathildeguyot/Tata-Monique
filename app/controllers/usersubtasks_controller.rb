@@ -8,28 +8,36 @@ class UsersubtasksController < ApplicationController
 
   def update
     authorize @usersubtask
-    document = Document.new(usersubtask_params[:document])
-    document.user = @usersubtask.user
-    # attributes document name thanks to the subtask
-    document.name = @usersubtask.subtask.document_type
-
-    # extract name of document without .extension
-    document.name = document.name.scan(/.*(?=\.)/).join
-
-    if BOULOT_DOCS.include?(document.name)
-      document.category = "Le boulot"
-    elsif MIF_DOCS.include?(document.name)
-      document.category = "La mif"
-    elsif SANTE_DOCS.include?(document.name)
-      document.category = "La santé"
-    else
-      document.category = "La casa"
-    end
-
-    if document.save!
+    if @usersubtask.subtask == @usersubtask.subtask.task.subtasks.last
       @usersubtask.done = true
+      @usersubtask.subtask.task.usertasks.first.update(done:true)
       @usersubtask.save
-      redirect_to task_subtasks_path(@usersubtask.subtask.task)
+      redirect_to tasks_path
+    else
+      document = Document.new(usersubtask_params[:document])
+      document.user = @usersubtask.user
+      # attributes document name thanks to the subtask
+      document.name = @usersubtask.subtask.document_type
+
+      # extract name of document without .extension
+      document.name = document.name.scan(/.*(?=\.)/).join
+
+      if BOULOT_DOCS.include?(document.name)
+        document.category = "Le boulot"
+      elsif MIF_DOCS.include?(document.name)
+        document.category = "La mif"
+      elsif SANTE_DOCS.include?(document.name)
+        document.category = "La santé"
+      else
+        document.category = "La casa"
+      end
+
+      if document.save!
+        @usersubtask.done = true
+        @usersubtask.save
+        redirect_to task_subtasks_path(@usersubtask.subtask.task)
+      end
+
     end
   end
 

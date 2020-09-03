@@ -82,13 +82,13 @@ task7.save
 end
 
 # CAF Subtasks
-subtask1 = Subtask.new(name:"Upload ta carte d'identité", description:"La CAF a besoin de vérifier ton identité.",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type: 'IDENTITE.pdf', task:task1)
+subtask1 = Subtask.new(name:"Upload ta carte d'identité", description:"La CAF a besoin de vérifier ton identité.",  deadline:Date.new(2020, 9, 9), subtask_type: "upload", document_type: 'Identité.pdf', task:task1)
 subtask1.save
-subtask2 = Subtask.new(name:"Upload ton RIB", description:"Entre le RIB sur lequel tu veux que les APL soient versées.",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type: "RIB.pdf", task:task1)
+subtask2 = Subtask.new(name:"Upload ton RIB", description:"Entre le RIB sur lequel tu veux que les APL soient versées.",  deadline:Date.new(2020, 9, 9), subtask_type: "upload", document_type: "RIB.pdf", task:task1)
 subtask2.save
-subtask3 = Subtask.new(name:"Complète ton attestation de loyer", description:"Télécharge ton attestation de loyer #{"<a href='https://www.aide-sociale.fr/wp-content/uploads/2018/05/attestation-loyer-apl-21.pdf'>juste ici</a>"}, et upload-la ci-dessous.", deadline: Date.new(2020, 8, 20), subtask_type: "upload", document_type: 'AttestationLoyer.pdf', task:task1)
+subtask3 = Subtask.new(name:"Complète ton attestation de loyer", description:"Télécharge ton attestation de loyer #{"<a class='underline--magical' href='https://www.aide-sociale.fr/wp-content/uploads/2018/05/attestation-loyer-apl-21.pdf'>juste ici</a>"}, et upload-la ci-dessous.", deadline: Date.new(2020, 9, 9), subtask_type: "upload", document_type: 'AttestationLoyer.pdf', task:task1)
 subtask3.save
-subtask4 = Subtask.new(name:"Bientôt fini ! Remplis le questionnaire de la CAF", description:"Rends toi #{"<a href='https://wwwd.caf.fr/wps/portal/caffr/aidesetservices/lesservicesenligne/faireunedemandedeprestation/demanderlaideaulogement'>ici</a>"}, tous les champs seront déja pré-remplis par Tata Monique !", deadline:Date.new(2020, 8, 18), subtask_type: "form", document_type: "CAF-form", task:task1)
+subtask4 = Subtask.new(name:"Bientôt fini ! Remplis le questionnaire de la CAF", description:"Rends toi #{"<a class='underline--magical' href='https://wwwd.caf.fr/wps/portal/caffr/aidesetservices/lesservicesenligne/faireunedemandedeprestation/demanderlaideaulogementexperimentation/!ut/p/a0#/acces' target='_blank'>ici</a>"}, tous les champs seront déja pré-remplis par Tata Monique !", deadline:Date.new(2020, 9, 9), subtask_type: "form", document_type: "CAF-form", task:task1)
 subtask4.save
 
 Usersubtask.create(subtask: subtask1, user: edouard, done:false)
@@ -98,32 +98,32 @@ Usersubtask.create(subtask: subtask1, user: edouard, done:false)
 end
 
 # ASSURANCE HAB
-subtask5 = Subtask.new(name:"Upload ta carte d'identité", description:"Luko a besoin de vérifier ton identité.",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type: "IDENTITE.pdf", task:task2)
+subtask5 = Subtask.new(name:"Upload ta carte d'identité", description:"Luko a besoin de vérifier ton identité.",  deadline:Date.new(2020, 9, 11), subtask_type: "upload", document_type: "IDENTITE.pdf", task:task2)
 subtask5.save
 Usersubtask.create(subtask: subtask5, user: edouard, done:false)
 
 #LA POSTE
-subtask6 = Subtask.new(name:"Upload ta carte d'identité", description:"La Poste a besoin de vérifier ton identité.",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type: 'IDENTITE.pdf', task:task3)
+subtask6 = Subtask.new(name:"Upload ta carte d'identité", description:"La Poste a besoin de vérifier ton identité.",  deadline:Date.new(2020, 9, 11), subtask_type: "upload", document_type: 'IDENTITE.pdf', task:task3)
 subtask6.save
 Usersubtask.create(subtask: subtask6, user: edouard, done:false)
 
 #CREDIT AGRICOLE
-subtask7 = Subtask.new(name:"Upload ta carte d'identité", description:"Le Crédit Agricole a besoin de vérifier ton identité",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type: "IDENTITE.pdf", task:task4)
+subtask7 = Subtask.new(name:"Upload ta carte d'identité", description:"Le Crédit Agricole a besoin de vérifier ton identité",  deadline:Date.new(2020, 9, 13), subtask_type: "upload", document_type: "IDENTITE.pdf", task:task4)
 subtask7.save
 Usersubtask.create(subtask: subtask7, user: edouard, done:false)
 
 #AMELI
-subtask8 = Subtask.new(name:"Upload ta carte d'identité", description:"AMELI a besoin de vérifier ton identité",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type: 'IDENTITE.pdf', task:task5)
+subtask8 = Subtask.new(name:"Upload ta carte d'identité", description:"AMELI a besoin de vérifier ton identité",  deadline:Date.new(2020, 9, 15), subtask_type: "upload", document_type: 'IDENTITE.pdf', task:task5)
 subtask8.save
 Usersubtask.create(subtask: subtask8, user: edouard, done:false)
 
 #TATA MONIQUE
-subtask9= Subtask.new(name:"Upload ta carte d'identité", description:"Histoire qu'on trouve ta mutuelle !",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type:'IDENTITE.pdf', task:task6)
+subtask9= Subtask.new(name:"Upload ta carte d'identité", description:"Histoire qu'on trouve ta mutuelle !",  deadline:Date.new(2020, 8, 15), subtask_type: "upload", document_type:'IDENTITE.pdf', task:task6)
 subtask9.save
 Usersubtask.create(subtask: subtask9, user: edouard, done:false)
 
 #IMPOTS.GOUV
-subtask10= Subtask.new(name:"Upload ta carte d'identité", description:"Les impôts ont besoin de vérifier ton identité",  deadline:Date.new(2020, 8, 18), subtask_type: "upload", document_type:'IDENTITE.pdf', task:task7)
+subtask10= Subtask.new(name:"Upload ta carte d'identité", description:"Les impôts ont besoin de vérifier ton identité",  deadline:Date.new(2021, 6, 12), subtask_type: "upload", document_type:'IDENTITE.pdf', task:task7)
 subtask10.save
 Usersubtask.create(subtask: subtask10, user: edouard, done:false)
 
@@ -136,6 +136,4 @@ Usersubtask.create(subtask: subtask10, user: edouard, done:false)
 #   subtask.save
 # end
 
-# # Assurance habitation Subtasks
-# subtask6 = Subtask.new(name:"", description:, done:, deadline:)
 
