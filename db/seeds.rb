@@ -82,7 +82,7 @@ task7.save
 end
 
 # CAF Subtasks
-subtask1 = Subtask.new(name:"Upload ta carte d'identité", description:"La CAF a besoin de vérifier ton identité.",  deadline:Date.new(2020, 9, 9), subtask_type: "upload", document_type: 'IDENTITE.pdf', task:task1)
+subtask1 = Subtask.new(name:"Upload ta carte d'identité", description:"La CAF a besoin de vérifier ton identité.",  deadline:Date.new(2020, 9, 9), subtask_type: "upload", document_type: 'Identité.pdf', task:task1)
 subtask1.save
 subtask2 = Subtask.new(name:"Upload ton RIB", description:"Entre le RIB sur lequel tu veux que les APL soient versées.",  deadline:Date.new(2020, 9, 9), subtask_type: "upload", document_type: "RIB.pdf", task:task1)
 subtask2.save
