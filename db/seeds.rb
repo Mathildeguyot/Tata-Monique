@@ -24,7 +24,7 @@ health.user = edouard
 health.save
 
 
-habitation = Habitation.new(number: 80, street: "rue Lafayette", zip_code: "75009", city: "Paris", category: "Locataire", rent: 880, size: 22, lease_start_date: Date.new(2020, 9, 11), furnished: true)
+habitation = Habitation.new(number: 10, street: "rue de la République", zip_code: "69001", city: "Lyon", category: "Locataire", rent: 0, size: 0, lease_start_date: Date.new(2020, 9, 4), furnished: true)
 habitation.user = edouard
 habitation.save
 
